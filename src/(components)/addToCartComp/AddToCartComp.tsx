@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+interface AddToCartCompPropsTypes {
+  src: String;
+}
 
-export default function AddToCartComp({ src }) {
-  const [count, setCount] = useState("");
-
-  
+const AddToCartComp: React.FC<AddToCartCompPropsTypes> = ({ src }) => {
   return (
     <>
       <div className="w-full">
@@ -31,4 +31,6 @@ export default function AddToCartComp({ src }) {
       </div>
     </>
   );
-}
+};
+
+export default AddToCartComp;

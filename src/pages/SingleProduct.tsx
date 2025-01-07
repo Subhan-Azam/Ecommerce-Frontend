@@ -19,7 +19,6 @@ import { Autoplay } from "swiper/modules";
 // import { useParams } from "react-router-dom";
 
 export default function SingleProduct() {
-
   // const params = useParams()
   // console.log('params', params)
 
@@ -162,9 +161,9 @@ export default function SingleProduct() {
                     }
                     content="Buy it now"
                   />
-                  <div className="w-[74px] h-[73px] bg-[#EEEEEE] rounded-full flex justify-center items-center">
+                  {/* <div className="w-[74px] h-[73px] bg-[#EEEEEE] rounded-full flex justify-center items-center">
                     <TiHeartOutline size={36} />
-                  </div>
+                  </div> */}
                 </div>
 
                 <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
@@ -232,7 +231,7 @@ export default function SingleProduct() {
                 disableOnInteraction: false,
               }}
               breakpoints={{
-                0: {
+                1: {
                   slidesPerView: 1,
                 },
                 768: {
@@ -241,22 +240,45 @@ export default function SingleProduct() {
                 1024: {
                   slidesPerView: 4,
                 },
+                1440: {
+                  slidesPerView: 4,
+                },
               }}
             >
               <SwiperSlide>
-                <ProductCard src={gamePad3} title="jdasd dafusafusauf" />
+                <ProductCard
+                  src={gamePad3}
+                  title="jdasd dafusafusauf"
+                  price="$1234"
+                />
               </SwiperSlide>
               <SwiperSlide>
-                <ProductCard src={gamePad3} title="jdasd dafusafusauf" />
+                <ProductCard
+                  src={gamePad3}
+                  title="jdasd dafusafusauf"
+                  price="$1234"
+                />
               </SwiperSlide>
               <SwiperSlide>
-                <ProductCard src={gamePad3} title="jdasd dafusafusauf" />
+                <ProductCard
+                  src={gamePad3}
+                  title="jdasd dafusafusauf"
+                  price="$1234"
+                />
               </SwiperSlide>
               <SwiperSlide>
-                <ProductCard src={gamePad3} title="jdasd dafusafusauf" />
+                <ProductCard
+                  src={gamePad3}
+                  title="jdasd dafusafusauf"
+                  price="$1234"
+                />
               </SwiperSlide>
               <SwiperSlide>
-                <ProductCard src={gamePad3} title="jdasd dafusafusauf" />
+                <ProductCard
+                  src={gamePad3}
+                  title="jdasd dafusafusauf"
+                  price="$1234"
+                />
               </SwiperSlide>
             </Swiper>
           </div>

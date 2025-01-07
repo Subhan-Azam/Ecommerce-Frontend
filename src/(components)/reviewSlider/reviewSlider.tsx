@@ -1,14 +1,60 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ReviewCard from "./ReviewCard.tsx";
 
-export default function ReviewSlider({src, title}) {
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchReviews } from "../../store/slices/allReviewsSlice.ts";
+import { AppDispatch, RootState } from "../../store/store.ts";
+
+export default function ReviewSlider() {
+  const getAllReviews = useSelector(
+    (store: RootState) => store.storeReviews.reviews
+  );
+  const dispatchReviews = useDispatch<AppDispatch>();
+  useEffect(() => {
+    dispatchReviews(fetchReviews());
+  }, [dispatchReviews]);
+
   return (
-    <div className="">
-      <div className="flex justify-around items-center border w-[380px] h-[147px] rounded-[20px]">
-        <img src={src} className="w-[100px] h-[100px] aspect-[3/2] object-contain" alt="" />
-        <div className="text-[#1B5A7D]">
-          <h3 className="font-[600] text-[23px]">{title}</h3>
-          <p className="font-[500] text-[18px]">(6 items)</p>
-        </div>
+    <div className="container mx-auto ">
+      <div className="flex justify-center mt-10 mb-20">
+        <Swiper
+          loop={true}
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {getAllReviews?.map((review, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <ReviewCard
+                  src={review?.image}
+                  title={review?.title.slice(0, 10) + "..."}
+                />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </div>
   );

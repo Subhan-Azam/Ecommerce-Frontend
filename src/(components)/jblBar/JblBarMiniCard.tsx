@@ -1,7 +1,12 @@
 import React from "react";
-import starsImg from '../../assets/stars.png'
+import starsImg from "../../assets/stars.png";
 
-export default function JblBarMiniCard({ src }) {
+interface JblBarMiniCardPropsTypes {
+  src: String;
+}
+
+
+const JblBarMiniCard: React.FC<JblBarMiniCardPropsTypes> = ({ src }) => {
   return (
     <>
       <div className="flex items-center border rounded-[20px] border-[#B6B6B6] lg:w-[493px] min-h-[240px]">
@@ -16,7 +21,7 @@ export default function JblBarMiniCard({ src }) {
               Play game
             </h2>
             <h3 className="text-[#4A4A4A] font-[600] text-[17px] mb-3">
-            $11,70
+              $11,70
             </h3>
             <img src={starsImg} alt="" />
           </div>
@@ -24,4 +29,6 @@ export default function JblBarMiniCard({ src }) {
       </div>
     </>
   );
-}
+};
+
+export default JblBarMiniCard;

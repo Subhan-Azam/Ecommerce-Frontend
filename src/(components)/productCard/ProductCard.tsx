@@ -3,14 +3,18 @@ import StarsImg from "../../assets/stars.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FiEye } from "react-icons/fi";
 
-export default function ProductCard({ src, title, price }) {
+interface ProductCardPropsTypes {
+  src: String;
+  title: String;
+  price: Number;
+}
+
+const ProductCard: React.FC<ProductCardPropsTypes> = ({ src, title, price }) => {
   return (
     <>
-      <div
-        className="w-[300px] h-[313px] cursor-pointer group relative border border-[#B6B6B6] rounded-[20px] hover:shadow-md p-4 ">
+      <div className="w-[300px] h-[313px] cursor-pointer group relative border border-[#B6B6B6] rounded-[20px] hover:shadow-md p-4 ">
         <div className="flex items-center justify-center py-2">
           <img
-            // className="w-[100px] h-[100px] object-cover rounded"
             className="w-[160px] h-[160px] aspect-[3/2] object-contain"
             src={src}
             alt="Camera"
@@ -25,8 +29,8 @@ export default function ProductCard({ src, title, price }) {
             </h3>
             <p className="text-[#4A4A4A] font-[600] text-[17px]">$ {price}</p>
 
-            <div className="flex justify-between items-center mt-2"> 
-              <img src={StarsImg}  alt="image not fount" />
+            <div className="flex justify-between items-center mt-2">
+              <img src={StarsImg} alt="image not fount" />
             </div>
           </div>
 
@@ -48,4 +52,6 @@ export default function ProductCard({ src, title, price }) {
       </div>
     </>
   );
-}
+};
+
+export default ProductCard;

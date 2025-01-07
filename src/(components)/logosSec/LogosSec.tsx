@@ -7,7 +7,7 @@ import logosImg5 from "../../assets/brand-4.png";
 
 export default function LogosSec() {
   return (
-    <div className="">
+    <div className="my-16 mx-5">
       <div className="container mx-auto flex items-center justify-around bg-[#E2F4FF] max-w-[1317px] w-full min-h-[136px]">
         <div className="flex flex-wrap justify-around gap-14 py-5">
           <img src={logosImg1} alt="" className="my-1 sm:my-3" />

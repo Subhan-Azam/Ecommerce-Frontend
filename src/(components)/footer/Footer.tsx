@@ -12,31 +12,29 @@ export default function Footer() {
     <>
       <footer className="text-[#1B5A7D] py-12 px-5 bg-[#E2F4FF] body-font">
         {/*  */}
-        <div className="container mx-auto px-16 min-h-[130px] flex flex-col md:flex-row items-center justify-between flex-wrap p-4 bg-white rounded-[20px]">
+        <div className="container mx-auto px-5 md:px-16 min-h-[130px] flex flex-col md:flex-row items-center justify-between flex-wrap p-4 rounded-[20px]">
           <div className="mb-4 md:mb-0">
             <h2 className="text-[29px] font-[700] text-[#1B5A7D] text-center">
               Subscribe newsletter
             </h2>
             {/* <p className="text-muted-foreground">Email address</p> */}
           </div>
-          <div className="flex justify-between px-3 mx-3 items-center bg-[#EDA415] max-w-[338px] w-full h-[63px] rounded-[20px]">
+          <div className="flex justify-between px-3 items-center bg-[#EDA415] max-w-[338px] w-full h-[63px] rounded-[20px]">
             <input
               type="email"
               placeholder="Enter your email"
-              className="placeholder-white bg-transparent outline-none text-[14px] text-white rounded-l-md p-2"
+              className="placeholder-white w-full mr-3 bg-transparent outline-none text-[14px] text-white rounded-l-md p-2"
             />
             <button>
               <img src={sendImg} alt="" />
             </button>
-            {/* <button className="bg-accent text-accent-foreground p-2 rounded-r-md hover:bg-accent/80">
-              Subscribe
-              </button> */}
           </div>
-          <div className="flex items-center gap-5 mt-4 md:mt-0">
+          
+          <div className="flex flex-wrap justify-center items-center gap-5 mt-4 md:mt-0">
             <img src={headPhone} alt="" />
             <div className="flex flex-col">
-              <span className="text-muted-foreground mr-2">Call us 24/7:</span>
-              <span className="text-primary font-semibold">
+              <span className="text-muted-foreground mr-2 text-center sm:text-start">Call us 24/7:</span>
+              <span className="text-primary font-semibold text-center sm:text-start">
                 (+62) 0123 567 789
               </span>
             </div>

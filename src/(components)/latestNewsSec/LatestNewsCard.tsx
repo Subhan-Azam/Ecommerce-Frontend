@@ -1,7 +1,10 @@
 import React from "react";
 
+interface LatestNewsCardPropsTypes {
+  src: String;
+}
 
-export default function LatestNews({src}) {
+const LatestNewsCard: React.FC<LatestNewsCardPropsTypes> = ({ src }) => {
   return (
     <>
       <div className="border rounded-[20px] p-4 my-5 lg:w-[630px] min-h-[369px]">
@@ -29,4 +32,6 @@ export default function LatestNews({src}) {
       </div>
     </>
   );
-}
+};
+
+export default LatestNewsCard;

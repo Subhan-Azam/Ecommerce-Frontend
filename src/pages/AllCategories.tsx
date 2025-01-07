@@ -3,23 +3,20 @@ import CategoriesCheckBox from "../(components)/categories/categoriesCheckBox/Ca
 import CategoriesHeading from "../(components)/categories/categoriesHeading/CategoriesHeading.tsx";
 import ProductCard from "../(components)/productCard/ProductCard.tsx";
 import SalesSec from "../(components)/salesSec/SalesSec.tsx";
-import categoriesImg from "../assets/game pad.png";
 
 import { useSelector, useDispatch } from "react-redux";
-// import { store } from "../store/store.ts";
-import { fetchAllCategories } from "../store/slices/allCategoriesSlice.ts";
+import Loader from "../(components)/loader/Loader.tsx";
+import { fetchProducts } from "../store/slices/allProductsSlice.ts";
+import { AppDispatch, RootState } from "../store/store.ts";
+
 
 export default function AllCategories() {
-  const getAllCategories = useSelector(
-    (store) => store.storeCategories.categories
-  );
-  // console.log("getAllCategories from component", getAllCategories);
-
-  const dispatch = useDispatch();
+  const getAllProducts = useSelector((store:RootState) => store.storeProducts.products);
+  const dispatchProduct = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(fetchAllCategories());
-  }, [dispatch]);
+    dispatchProduct(fetchProducts());
+  }, [dispatchProduct]);
 
   return (
     <>
@@ -93,25 +90,25 @@ export default function AllCategories() {
         </div>
 
         {/* Section 2 */}
-        <div className="flex flex-wrap justify-center lg:justify-around col-span-4 lg:col-span-3 gap-5">
-          {getAllCategories?.map((category, index) => {
-            return (
-                <ProductCard
-                  src={category.image}
-                  title={category.title.slice(0, 20) + "..."}
-                  price={category.price}
-                />
-            );
-          })}
-          
-          {/* <ProductCard src={categoriesImg} title="Game Pad" price="$34235" />
-          <ProductCard src={categoriesImg} title="Game Pad" price="$34235" />
-          <ProductCard src={categoriesImg} title="Game Pad" price="$34235" />
-          <ProductCard src={categoriesImg} title="Game Pad" price="$34235" />
-          <ProductCard src={categoriesImg} title="Game Pad" price="$34235" />
-          <ProductCard src={categoriesImg} title="Game Pad" price="$34235" />
-          <ProductCard src={categoriesImg} title="Game Pad" price="$34235" /> */}
-        </div>
+        {!getAllProducts.length ? (
+          <div className="mx-auto flex justify-center col-span-4 lg:col-span-3">
+            <Loader />
+          </div>
+        ) : (
+          <div className="flex flex-wrap justify-center lg:justify-around col-span-4 lg:col-span-3 gap-5">
+            {getAllProducts?.map((product, index) => {
+              return (
+                <div key={index} className="">
+                  <ProductCard
+                    src={product?.image}
+                    title={product?.title.slice(0, 20) + "..."}
+                    price={product?.price}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
       <SalesSec />
     </>

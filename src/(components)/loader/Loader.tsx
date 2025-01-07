@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductCardLoading() {
+export default function Loader() {
   return (
     <>
       <div className="my-24" role="status">

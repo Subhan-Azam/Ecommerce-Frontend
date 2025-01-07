@@ -1,27 +1,58 @@
 import React from "react";
+import CompanyMemberCard from "./CompanyMemberCard.tsx";
 
-export default function CompanyMemberSec({ src }) {
+import CompanyMember1 from "../../assets/Frame 61.png";
+import CompanyMember2 from "../../assets/Frame 61 (1).png";
+import CompanyMember3 from "../../assets/Frame 61 (2).png";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
+
+export default function CompanyMemberSec() {
   return (
-    <div className="flex justify-center cursor-pointer">
-      {/*  */}
-      <div className="bg-card border rounded-[20px] p-4 my-5 max-w-[432px] w-full">
-        <div className="flex items-center gap-[37px]">
-          <img
-            className="w-[100px] h-[100px] rounded-full"
-            src={src}
-            alt="Savannah Nguyen"
-          />
-          <h2 className="text-[15px] text-[#003F62] font-semibold text-primary-foreground">
-            Savannah Nguyen
-          </h2>
-        </div>
-        <p className=" text-[#003F62] px-5 py-[9px] mt-7 bg-[#E2F4FF] rounded-[18px] text-[13px]">
-          Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus
-          bibendum ullamcorper. Phasellus tristique aenean at lorem sed
-          scelerisque.
-        </p>
+    <>
+      <div className="container mx-auto flex my-16">
+        <Swiper
+          loop={true}
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          <SwiperSlide>
+            <CompanyMemberCard src={CompanyMember1} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <CompanyMemberCard src={CompanyMember2} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <CompanyMemberCard src={CompanyMember3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CompanyMemberCard src={CompanyMember3} />
+          </SwiperSlide>
+        </Swiper>
       </div>
-      {/*  */}
-    </div>
+    </>
   );
 }

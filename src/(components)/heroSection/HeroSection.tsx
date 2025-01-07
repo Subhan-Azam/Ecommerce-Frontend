@@ -106,9 +106,9 @@ export default function HeroSection() {
   const [activeImage, setActiveImage] = useState(HeroImg1);
 
   const images = {
-    1: HeroImg1, // Image for button 1
-    2: HeroImg2, // Image for button 2
-    3: HeroImg3, // Image for button 3
+    1: HeroImg1,
+    2: HeroImg2,
+    3: HeroImg3,
   };
 
   const handleButtonClick = (buttonNumber) => {
@@ -129,7 +129,7 @@ export default function HeroSection() {
             <SearchBtn
               content={"Shop Now"}
               style={
-                "bg-[#EDA415] text-white w-[300px] lg:w-[132px] h-[45px] rounded-2xl"
+                "bg-[#EDA415] text-white w-full md:w-[300px] lg:w-[132px] h-[45px] rounded-2xl"
               }
             />
             <SearchBtn
