@@ -95,6 +95,8 @@
 //   );
 // }
 
+
+
 import React, { useState } from "react";
 import SearchBtn from "../buttons/SearchBtn.tsx";
 import HeroImg1 from "../../assets/hero img.png";

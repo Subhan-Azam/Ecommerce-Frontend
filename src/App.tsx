@@ -8,14 +8,13 @@ import Footer from "./(components)/footer/Footer.tsx";
 import SingleProduct from "./pages/SingleProduct.tsx";
 import AddToCart from "./pages/AddToCart.tsx";
 
-
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
-          <Navbar /> <Home /> <Footer/>
+          <Navbar /> <Home /> <Footer />
         </>
       ),
     },
@@ -23,23 +22,29 @@ function App() {
       path: "/allCategories",
       element: (
         <>
-          <Navbar /> <AllCategories /><Footer/>
+          <Navbar /> <AllCategories />
+          <Footer />
         </>
       ),
     },
     {
-      path: "/single-product",
+      path: "/single-product/:id",
       element: (
         <>
           <Navbar /> <SingleProduct/> <Footer/>
         </>
       ),
     },
+    
+    // {
+    //   path: "/single-product/:id",
+    //   element: <SingleProduct />,
+    // },
     {
       path: "/addtocart",
       element: (
         <>
-          <Navbar /> <AddToCart/> <Footer/>
+          <Navbar /> <AddToCart /> <Footer />
         </>
       ),
     },

@@ -3,7 +3,6 @@ import { CiStar } from "react-icons/ci";
 import { TiHeartOutline } from "react-icons/ti";
 import SearchBtn from "../(components)/buttons/SearchBtn.tsx";
 import ProductCard from "../(components)/productCard/ProductCard.tsx";
-import mainImg from "../assets/6456332_sd 1.png";
 import gamePad3 from "../assets/game pad (2).png";
 import { SlSocialGoogle } from "react-icons/sl";
 import { PiWhatsappLogoLight, PiFacebookLogo } from "react-icons/pi";
@@ -14,25 +13,12 @@ import "swiper/swiper-bundle.css";
 import { Pagination } from "swiper/modules";
 import { Navigation } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
-// import { singleProduct } from "../store/slices/allProductsSlice.ts";
-// import { useDispatch, useSelector } from "react-redux";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store.ts";
 
 export default function SingleProduct() {
-  // const params = useParams()
-  // console.log('params', params)
-
-  // const getSingleProduct = useSelector((store) => store.storeProducts.products);
-  // console.log("getSingleProduct dynamic", getSingleProduct);
-
-  // let dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(singleProduct());
-  // }, []);
-
   const [count, setCount] = useState(0);
-
   const increment = () => {
     setCount(count + 1);
   };
@@ -42,40 +28,55 @@ export default function SingleProduct() {
     }
   };
 
+  const { id } = useParams();
+  const allProduct = useSelector(
+    (store: RootState) => store.storeProducts.products
+  );
+
+  const product = allProduct.find((p) => p.id === Number(id));
+  if (!product) {
+    return <p>Data not found</p>;
+  }
+
   return (
     <>
       <section className="py-8 md:py-16 dark:bg-gray-900 antialiased">
         <div className="mx-10 px-4 2xl:px-0">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-            <div className="shrink-0 max-w-[800px] w-full mx-auto">
+            <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto">
               <div className="flex justify-center">
-                <img className=" max-w-[650px] w-full" src={mainImg} alt="" />
-              </div>
-              <div className="flex flex-wrap justify-center items-center gap-6 mt-5">
-                <div className="border rounded-[20px]">
-                  <img
-                    src={gamePad3}
-                    className="w-[110px] sm:w-[300px]"
-                    alt=""
-                  />
-                </div>
-                <div className="border rounded-[20px]">
-                  <img
-                    src={gamePad3}
-                    className="w-[110px] sm:w-[300px]"
-                    alt=""
-                  />
-                </div>
+                <img
+                  className="w-full p-10"
+                  src={product.image}
+                  alt=""
+                />
               </div>
             </div>
 
+              {/* <div className="flex flex-wrap justify-center items-center gap-6 mt-5">
+                <div className="border rounded-[20px]">
+                  <img
+                    src={gamePad3}
+                    className="w-[110px] sm:w-[300px]"
+                    alt=""
+                  />
+                </div>
+                <div className="border rounded-[20px]">
+                  <img
+                    src={gamePad3}
+                    className="w-[110px] sm:w-[300px]"
+                    alt=""
+                  />
+                </div>
+              </div> */}
+
             <div className="mt-6 sm:mt-8 lg:mt-0">
               <h1 className="font-[600] text-[30px] text-[#003F62]">
-                Play game
+                {product.title}
               </h1>
               <div className="mt-4">
                 <p className="text-[30px] font-[600] text-[#4A4A4A] sm:text-3xl dark:text-white">
-                  $11,70
+                  $:{product.price}
                 </p>
 
                 <div className="flex items-center gap-2 mt-2 sm:mt-3">
@@ -283,7 +284,36 @@ export default function SingleProduct() {
             </Swiper>
           </div>
         </div>
+
+
+
       </section>
     </>
   );
 }
+
+// import { useParams } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import { RootState } from "../store/store.ts";
+
+// export default function SingleProduct() {
+//   const { id } = useParams();
+//   const allProducts = useSelector(
+//     (store: RootState) => store.storeProducts.products
+//   );
+
+//   const product = allProducts.find((p) => p.id === Number(id));
+
+//   if (!product) {
+//     return <h2 className="text-center text-red-500">Product Not Found!</h2>;
+//   }
+
+//   return (
+//     <div>
+//       <h1>{product.title}</h1>
+//       <img src={product.image} alt={product.title} />
+//       <p>Price: ${product.price}</p>
+//       <p>{product.description}</p>
+//     </div>
+//   );
+// }

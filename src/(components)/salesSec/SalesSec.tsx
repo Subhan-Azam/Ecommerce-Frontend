@@ -1,12 +1,21 @@
 import React from "react";
 import SearchBtn from "../buttons/SearchBtn.tsx";
+import bgImg from "../../assets/bgImg.png";
 
 export default function SalesSec() {
   return (
     <div className="mx-5">
-
-      <div className="container mx-auto h-[417px] rounded-[20px] bg-black flex flex-col justify-center items-center pr-0 lg:items-end lg:pr-[130px] my-16">
-        <div className="text-center flex flex-col gap-7">
+      <div
+        className="container mx-auto h-[417px] rounded-[20px] flex flex-col justify-center items-center pr-0 lg:items-end lg:pr-[130px] my-16 relative"
+        style={{
+          backgroundImage: `url(${bgImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="text-center flex flex-col gap-7 z-10">
+          {" "}
+          {/* z-10 ensures text is above the image */}
           <SearchBtn
             content={"New Laptop"}
             style="bg-[#EDA415] text-white w-[132px] h-[45px] rounded-2xl"
@@ -24,7 +33,5 @@ export default function SalesSec() {
         </div>
       </div>
     </div>
-
-    // </div>
   );
 }

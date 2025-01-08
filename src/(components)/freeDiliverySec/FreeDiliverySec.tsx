@@ -1,31 +1,33 @@
 import React from "react";
-interface FreeDiliveryPropsTypes {
-  src: String;
-  title: String;
-  text: String;
-}
+import DiliveryCard from "./DiliveryCard.tsx";
 
+const FreeDiliverySec = () => {
+  const icon1 = require("../../assets/box-tick.png");
+  const icon2 = require("../../assets/crown.png");
+  const icon3 = require("../../assets/shield-security.png");
 
-const FreeDiliverySec: React.FC<FreeDiliveryPropsTypes> = ({
-  src,
-  title,
-  text,
-}) => {
   return (
-    <>
-      <div className="flex items-center p-2">
-        <img
-          undefinedhidden="true"
-          alt="1 year warranty icon"
-          src={src}
-          className="mr-2"
-        />
-        <div>
-          <h3 className="font-semibold text-[22px] text-[#003F62]">{title}</h3>
-          <p className="text-[18px] font-[400] text-[#003F62]">{text}</p>
+    <div className="mx-5">
+      <div className="container mx-auto my-8  bg-[#E2F4FF] p-4 rounded-[20px]">
+        <div className="px-0 md:px-20 mx-auto flex flex-wrap flex-col md:flex-row justify-center gap-3 lg:justify-between items-center space-y-10 md:space-y-0">
+          <DiliveryCard
+            src={icon1}
+            title="Free delivery"
+            text="on order above $50,00"
+          />
+          <DiliveryCard
+            src={icon2}
+            title="Best quality"
+            text="best quality in low price"
+          />
+          <DiliveryCard
+            src={icon3}
+            title="1 year warranty"
+            text="Avaliable warranty"
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

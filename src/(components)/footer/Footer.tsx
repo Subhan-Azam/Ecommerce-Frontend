@@ -12,7 +12,7 @@ export default function Footer() {
     <>
       <footer className="text-[#1B5A7D] py-12 px-5 bg-[#E2F4FF] body-font">
         {/*  */}
-        <div className="container mx-auto px-5 md:px-16 min-h-[130px] flex flex-col md:flex-row items-center justify-between flex-wrap p-4 rounded-[20px]">
+        <div className="container mx-auto bg-white px-5 md:px-16 min-h-[130px] flex flex-col md:flex-row items-center justify-between flex-wrap p-4 rounded-[20px]">
           <div className="mb-4 md:mb-0">
             <h2 className="text-[29px] font-[700] text-[#1B5A7D] text-center">
               Subscribe newsletter

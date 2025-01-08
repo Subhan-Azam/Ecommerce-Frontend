@@ -10,11 +10,11 @@ export default function NavbarSec3() {
       {/* Left Section */}
       <div className="flex flex-col md:flex-row items-center w-full md:w-auto gap-5 md:gap-10">
         <Link to="/allCategories">
-          <button className="bg-[#EDA415] flex items-center justify-center text-white gap-2 w-full md:w-[210px] h-12 md:h-[70px]">
+          <button className="bg-[#EDA415] flex items-center justify-center w-[218px] h-[70px] text-white text-[16px] font-[500] gap-2">
             All Categories <IoIosArrowDown size={20} />
           </button>
         </Link>
-        <nav className="flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-6 text-sm">
+        <nav className="hidden lg:flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-6 text-sm">
           <Link to="/" className="">
             <div className="flex items-center gap-1 hover:text-[#EDA415]">
               Home

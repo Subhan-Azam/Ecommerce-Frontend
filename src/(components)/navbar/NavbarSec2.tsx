@@ -50,17 +50,17 @@ import { Link } from "react-router-dom";
 
 export default function NavbarSec2() {
   return (
-    <div className="flex flex-wrap items-center justify-between bg-[#003F62] px-4 md:px-10 py-3 min-h-[90px]">
+    <div className="flex flex-wrap items-center justify-between bg-[#003F62] px-4 md:px-10 min-h-[90px]">
       {/* Left Section */}
-      <div className="flex flex-col md:flex-row items-center w-full md:max-w-[620px] gap-4 md:gap-6">
+      <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
         <Link to={"/"}>
           <img
             src={NavLogo}
-            className="w-[140px] h-[39px] mx-auto md:mx-0"
+            className="w-[140px] h-[39px] mr-5"
             alt="Logo"
           />
         </Link>
-        <div className="flex bg-white rounded-2xl w-full md:w-auto items-center">
+        <div className="hidden md:flex bg-white rounded-[20px] w-full md:w-auto items-center">
           <input
             className="outline-none px-4 py-2 rounded-l-2xl w-full md:w-[200px] lg:w-[300px] text-sm"
             type="text"
@@ -69,14 +69,14 @@ export default function NavbarSec2() {
           <SearchBtn
             content={"Search"}
             style={
-              "bg-[#EDA415] text-white w-[100px] md:w-[132px] h-[40px] md:h-[45px] rounded-r-2xl"
+              "bg-[#EDA415] text-white w-[100px] md:w-[132px] h-[40px] md:h-[45px] rounded-[20px]"
             }
           />
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="flex justify-center md:justify-be gap-4 md:gap-6 mt-4 md:mt-0 text-white">
+      <div className="flex justify-center md:justify-be gap-4 md:gap-6 text-white">
         <Link to="#" className="flex items-center gap-2">
           <AiOutlineUser size={24} />
           <p className="text-[14px] hidden sm:block">Sign in</p>
