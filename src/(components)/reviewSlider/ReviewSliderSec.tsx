@@ -12,7 +12,7 @@ import { AppDispatch, RootState } from "../../store/store.ts";
 import { Link } from "react-router-dom";
 import Loader from "../loader/Loader.tsx";
 
-export default function ReviewSlider() {
+export default function ReviewSliderSec() {
   const getAllReviews = useSelector(
     (store: RootState) => store.storeReviews.reviews
   );
