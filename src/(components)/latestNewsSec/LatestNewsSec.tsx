@@ -1,7 +1,5 @@
 import React from "react";
 import LatestNewsCard from "./LatestNewsCard.tsx";
-import LatestNewsImg from "../../assets/ear bird.png";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Pagination } from "swiper/modules";
@@ -9,6 +7,7 @@ import { Navigation } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 
 export default function LatestNewsSec() {
+  const LatestNewsImg = "../../assets/ear bird.png";
   return (
     <>
       <section className="text-gray-600 body-font my-20">
