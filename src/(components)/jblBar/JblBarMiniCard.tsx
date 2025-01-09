@@ -1,33 +1,33 @@
 import React from "react";
-import starsImg from "../../assets/stars.png";
 
 interface JblBarMiniCardPropsTypes {
-  src: String;
+  src: string;
 }
 
-
 const JblBarMiniCard: React.FC<JblBarMiniCardPropsTypes> = ({ src }) => {
+  const starsImg = require("../../assets/stars.png");
   return (
-    <>
-      <div className="flex items-center border rounded-[20px] border-[#B6B6B6] lg:w-[493px] min-h-[240px]">
-        <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img
-            alt="team"
-            className="flex-shrink-0 rounded-lg w-[282px] h-[168px] object-cover object-center sm:mb-0 mb-4"
-            src={src}
-          />
-          <div className="flex-grow space-y-3 sm:pl-8">
-            <h2 className="title-font font-[#003F62] text-[17px] text-[#003F62]">
-              Play game
-            </h2>
-            <h3 className="text-[#4A4A4A] font-[600] text-[17px] mb-3">
-              $11,70
-            </h3>
-            <img src={starsImg} alt="" />
-          </div>
-        </div>
+    <div className="flex flex-wrap sm:flex-nowrap items-center border rounded-[20px] border-[#B6B6B6] w-full min-h-[200px] p-4">
+      {/* ✅ Image Section */}
+      <div className="flex items-center justify-center w-full sm:w-[40%]">
+        <img
+          alt="product"
+          className="rounded-lg max-w-full h-auto object-cover aspect-[3/2]"
+          src={src}
+        />
       </div>
-    </>
+
+      {/* ✅ Content Section */}
+      <div className="flex-grow space-y-3 text-center sm:text-left sm:pl-6">
+        <h2 className="font-bold text-[#003F62] text-lg md:text-xl">
+          Play Game
+        </h2>
+        <h3 className="text-[#4A4A4A] font-semibold text-lg md:text-xl">
+          $11.70
+        </h3>
+        <img src={starsImg} alt="Rating Stars" className="mx-auto sm:mx-0" />
+      </div>
+    </div>
   );
 };
 

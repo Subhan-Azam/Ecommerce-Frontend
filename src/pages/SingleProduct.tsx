@@ -41,7 +41,7 @@ export default function SingleProduct() {
 
   return (
     <>
-      <section className="py-8 md:py-16 dark:bg-gray-900 antialiased">
+      <section className="mx-5 md:mx-10 py-8 md:py-16 dark:bg-gray-900 antialiased">
         <div className="mx-10 px-4 2xl:px-0">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
             <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto">
@@ -187,20 +187,19 @@ export default function SingleProduct() {
           />
         </div>
 
-        <div className="mx-10 mt-10 border py-8 rounded-[20px] text-center px-0 md:px-10 md:text-start">
-          <h2 className="font-[600] text-[22px]">Customer reviews</h2>
-          <p className="py-3">No reviews yet</p>
-          <button className="bg-[#003F62] underline text-white py-2 px-5">
-            Write a review
-          </button>
-        </div>
+          <div className="container mx-auto mt-10 border py-8 rounded-[20px] text-center px-0 md:px-10 md:text-start">
+            <h2 className="font-[600] text-[22px]">Customer reviews</h2>
+            <p className="py-3">No reviews yet</p>
+            <button className="bg-[#003F62] underline text-white py-2 px-5">
+              Write a review
+            </button>
+          </div>
 
-        <div className="container mx-auto">
-          {/* <div className="flex flex-wrap justify-center items-center mx-10 mb-10 mt-20"> */}
-          <div className="mx-10 flex gap-7 flex-wrap justify-center lg:justify-between mb-10 mt-20">
-            <h1 className="text-[#1B5A7D] font-[600] text-[27px]">
-              Related product
-            </h1>
+        <div className="container mx-auto mt-10">
+          <h1 className="text-[#1B5A7D] font-[600] text-[27px] my-8">
+            Related product
+          </h1>
+          <div className="flex justify-center">
             <Swiper
               loop={true}
               modules={[Navigation, Pagination, Autoplay]}
@@ -219,48 +218,45 @@ export default function SingleProduct() {
                   slidesPerView: 2,
                 },
                 1024: {
-                  slidesPerView: 4,
+                  slidesPerView: 3,
                 },
-                1440: {
+                1080: {
                   slidesPerView: 4,
                 },
               }}
             >
-              <SwiperSlide>
-                <ProductCard
-                  src={gamePad3}
-                  title="jdasd dafusafusauf"
-                  price="$1234"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard
-                  src={gamePad3}
-                  title="jdasd dafusafusauf"
-                  price="$1234"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard
-                  src={gamePad3}
-                  title="jdasd dafusafusauf"
-                  price="$1234"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard
-                  src={gamePad3}
-                  title="jdasd dafusafusauf"
-                  price="$1234"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard
-                  src={gamePad3}
-                  title="jdasd dafusafusauf"
-                  price="$1234"
-                />
-              </SwiperSlide>
+              {[
+                {
+                  src: require("../assets/camera card.png"),
+                  title: "Camera",
+                  price: "$321",
+                },
+                {
+                  src: require("../assets/camera card.png"),
+                  title: "Wireless headphones",
+                  price: "$11,70",
+                },
+                {
+                  src: require("../assets/camera card.png"),
+                  title: "Play game",
+                  price: "$11,70",
+                },
+                {
+                  src: require("../assets/camera card.png"),
+                  title: "Tablet as a laptop",
+                  price: "$11,70",
+                },
+              ].map((card, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex justify-center gap-5">
+                    <ProductCard
+                      src={card.src}
+                      title={card.title}
+                      price={card.price}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

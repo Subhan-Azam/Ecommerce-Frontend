@@ -1,5 +1,4 @@
 import React from "react";
-import StarsImg from "../../assets/stars.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FiEye } from "react-icons/fi";
 
@@ -9,7 +8,12 @@ interface ProductCardPropsTypes {
   price: Number;
 }
 
-const ProductCard: React.FC<ProductCardPropsTypes> = ({ src, title, price }) => {
+const ProductCard: React.FC<ProductCardPropsTypes> = ({
+  src,
+  title,
+  price,
+}) => {
+  const StarsImg = require("../../assets/stars.png");
   return (
     <div>
       <div className="border border-[#B6B6B6] w-[300px] h-[313px] cursor-pointer group relative rounded-[20px] hover:shadow-md p-4">
@@ -34,9 +38,8 @@ const ProductCard: React.FC<ProductCardPropsTypes> = ({ src, title, price }) => 
             </div>
           </div>
 
-          {/* Hover content */}       
-          
-          <div className="absolute bottom-5 left-[6px] flex gap-3 group-hover:block justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {/* Hover content */}
+          <div className="absolute bottom-5 left-[6px] flex gap-3 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-5 transition-all duration-300">
             <div className="border flex items-center justify-around rounded-[19px] bg-[#87BCD9] w-[204px] h-[60px] cursor-pointer">
               <button className="font-[600] text-[15px]">Add to cart</button>
               <div className="bg-[#EDA415] rounded-[490px] w-[30px] h-[30px] flex items-center justify-center">

@@ -35,20 +35,15 @@ export default function CompanyMemberSec() {
             },
           }}
         >
-          <SwiperSlide>
-            <CompanyMemberCard src={CompanyMember1} />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <CompanyMemberCard src={CompanyMember2} />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <CompanyMemberCard src={CompanyMember3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CompanyMemberCard src={CompanyMember3} />
-          </SwiperSlide>
+          {[`${CompanyMember1}`, `${CompanyMember2}`, `${CompanyMember1}`].map(
+            (company, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <CompanyMemberCard src={company} />
+                </SwiperSlide>
+              );
+            }
+          )}
         </Swiper>
       </div>
     </>

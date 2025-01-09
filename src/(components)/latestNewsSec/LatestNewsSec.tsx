@@ -7,7 +7,8 @@ import { Navigation } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 
 export default function LatestNewsSec() {
-  const LatestNewsImg = "../../assets/ear bird.png";
+  const LatestNewsImg = require("../../assets/ear bird.png");
+  const LatestNewsImg2 = require("../../assets/latesNewSec.png");
   return (
     <>
       <section className="text-gray-600 body-font my-20">
@@ -47,7 +48,7 @@ export default function LatestNewsSec() {
               </SwiperSlide>
               <SwiperSlide className="">
                 <div className="md:flex justify-center items-center">
-                  <LatestNewsCard src={LatestNewsImg} />
+                  <LatestNewsCard src={LatestNewsImg2} />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="">

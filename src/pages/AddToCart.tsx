@@ -1,10 +1,11 @@
 import React from "react";
 import AddToCartComp from "../(components)/addToCartComp/AddToCartComp.tsx";
-import greenGamePad from "../assets/green game pad.png";
 import SearchBtn from "../(components)/buttons/SearchBtn.tsx";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 export default function AddToCart() {
+  const greenGamePad = "../assets/green game pad.png";
+
   return (
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">

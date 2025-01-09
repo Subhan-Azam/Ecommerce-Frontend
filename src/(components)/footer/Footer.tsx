@@ -1,13 +1,13 @@
 import React from "react";
-import logo from "../../assets/logo (1).png";
 import FooterLinks from "./FooterLinks.tsx";
 import { SlSocialGoogle } from "react-icons/sl";
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { PiWhatsappLogo } from "react-icons/pi";
-import sendImg from "../../assets/send-2.png";
-import headPhone from "../../assets/headphone.png";
 
 export default function Footer() {
+  const logo = require("../../assets/logo (1).png");
+  const sendImg = require("../../assets/send-2.png");
+  const headPhone = require("../../assets/headphone.png");
   return (
     <>
       <footer className="text-[#1B5A7D] py-12 px-5 bg-[#E2F4FF] body-font">
@@ -29,11 +29,13 @@ export default function Footer() {
               <img src={sendImg} alt="" />
             </button>
           </div>
-          
+
           <div className="flex flex-wrap justify-center items-center gap-5 mt-4 md:mt-0">
             <img src={headPhone} alt="" />
             <div className="flex flex-col">
-              <span className="text-muted-foreground mr-2 text-center sm:text-start">Call us 24/7:</span>
+              <span className="text-muted-foreground mr-2 text-center sm:text-start">
+                Call us 24/7:
+              </span>
               <span className="text-primary font-semibold text-center sm:text-start">
                 (+62) 0123 567 789
               </span>

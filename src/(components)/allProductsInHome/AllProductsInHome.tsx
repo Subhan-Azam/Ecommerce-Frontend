@@ -63,27 +63,25 @@ const AllProductsInHome = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-5 bg-red-500">
-        {/* <div className="grid grid-cols-[repeat(auto-fit, minmax(308px,1fr))] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center "> */}
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
-              <div key={product.id} className="cursor-pointer">
-                <Link to={`/single-product/${product.id}`}>
-                  <ProductCard
-                    src={product.image}
-                    title={product.title.slice(0, 20) + "..."}
-                    price={product.price}
-                  />
-                </Link>
-              </div>
-            ))
-          ) : (
-            <div className="flex justify-center items-center col-span-4 ">
-              <Loader />
+      <div className="flex flex-wrap justify-center gap-5">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <div key={product.id} className="cursor-pointer">
+              <Link to={`/single-product/${product.id}`}>
+                <ProductCard
+                  src={product.image}
+                  title={product.title.slice(0, 20) + "..."}
+                  price={product.price}
+                />
+              </Link>
             </div>
-          )}
-        </div>
-        {/* </div> */}
+          ))
+        ) : (
+          <div className="flex justify-center items-center col-span-4 ">
+            <Loader />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

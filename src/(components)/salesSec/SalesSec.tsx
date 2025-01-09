@@ -1,8 +1,8 @@
 import React from "react";
 import SearchBtn from "../buttons/SearchBtn.tsx";
-import bgImg from "../../assets/bgImg.png";
 
 export default function SalesSec() {
+  const bgImg = require("../../assets/bgImg.png");
   return (
     <div className="mx-5">
       <div
@@ -14,8 +14,6 @@ export default function SalesSec() {
         }}
       >
         <div className="text-center flex flex-col gap-7 z-10">
-          {" "}
-          {/* z-10 ensures text is above the image */}
           <SearchBtn
             content={"New Laptop"}
             style="bg-[#EDA415] text-white w-[132px] h-[45px] rounded-2xl"
