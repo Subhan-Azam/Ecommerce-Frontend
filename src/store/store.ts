@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { allProductSlice } from "./slices/allProductsSlice.ts";
 import { allReviewsSlice } from "./slices/allReviewsSlice.ts";
-import { specificProductSlice } from "./slices/specificProductSlice.ts";
 import { allCategoriesSlice } from "./slices/allCategoriesSlice.ts";
 
 export const store = configureStore({
@@ -9,7 +8,6 @@ export const store = configureStore({
     storeProducts: allProductSlice.reducer,
     storeReviews: allReviewsSlice.reducer,
     storeCategories: allCategoriesSlice.reducer,
-    storeSpecificProduct: specificProductSlice.reducer,
   },
 });
 

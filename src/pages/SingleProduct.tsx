@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { CiStar } from "react-icons/ci";
-import { TiHeartOutline } from "react-icons/ti";
 import SearchBtn from "../(components)/buttons/SearchBtn.tsx";
 import ProductCard from "../(components)/productCard/ProductCard.tsx";
-import gamePad3 from "../assets/game pad (2).png";
+
 import { SlSocialGoogle } from "react-icons/sl";
 import { PiWhatsappLogoLight, PiFacebookLogo } from "react-icons/pi";
 
@@ -18,6 +17,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store.ts";
 
 export default function SingleProduct() {
+  const gamePad3 = require("../assets/game pad (2).png");
+
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
@@ -45,30 +46,9 @@ export default function SingleProduct() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
             <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto">
               <div className="flex justify-center">
-                <img
-                  className="w-full p-10"
-                  src={product.image}
-                  alt=""
-                />
+                <img className="w-full p-10" src={product.image} alt="" />
               </div>
             </div>
-
-              {/* <div className="flex flex-wrap justify-center items-center gap-6 mt-5">
-                <div className="border rounded-[20px]">
-                  <img
-                    src={gamePad3}
-                    className="w-[110px] sm:w-[300px]"
-                    alt=""
-                  />
-                </div>
-                <div className="border rounded-[20px]">
-                  <img
-                    src={gamePad3}
-                    className="w-[110px] sm:w-[300px]"
-                    alt=""
-                  />
-                </div>
-              </div> */}
 
             <div className="mt-6 sm:mt-8 lg:mt-0">
               <h1 className="font-[600] text-[30px] text-[#003F62]">
@@ -284,36 +264,7 @@ export default function SingleProduct() {
             </Swiper>
           </div>
         </div>
-
-
-
       </section>
     </>
   );
 }
-
-// import { useParams } from "react-router-dom";
-// import { useSelector } from "react-redux";
-// import { RootState } from "../store/store.ts";
-
-// export default function SingleProduct() {
-//   const { id } = useParams();
-//   const allProducts = useSelector(
-//     (store: RootState) => store.storeProducts.products
-//   );
-
-//   const product = allProducts.find((p) => p.id === Number(id));
-
-//   if (!product) {
-//     return <h2 className="text-center text-red-500">Product Not Found!</h2>;
-//   }
-
-//   return (
-//     <div>
-//       <h1>{product.title}</h1>
-//       <img src={product.image} alt={product.title} />
-//       <p>Price: ${product.price}</p>
-//       <p>{product.description}</p>
-//     </div>
-//   );
-// }

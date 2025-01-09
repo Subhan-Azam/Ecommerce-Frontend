@@ -1,10 +1,5 @@
 import React from "react";
 import CompanyMemberCard from "./CompanyMemberCard.tsx";
-
-import CompanyMember1 from "../../assets/Frame 61.png";
-import CompanyMember2 from "../../assets/Frame 61 (1).png";
-import CompanyMember3 from "../../assets/Frame 61 (2).png";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Pagination } from "swiper/modules";
@@ -12,6 +7,9 @@ import { Navigation } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 
 export default function CompanyMemberSec() {
+  const CompanyMember1 = require("../../assets/Frame 61.png");
+  const CompanyMember2 = require("../../assets/Frame 61 (1).png");
+  const CompanyMember3 = require("../../assets/Frame 61 (2).png");
   return (
     <>
       <div className="container mx-auto flex my-16">

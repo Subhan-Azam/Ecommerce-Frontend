@@ -12,7 +12,7 @@ import CompanyMemberSec from "../(components)/companyMemberSec/CompanyMemberSec.
 
 export default function Home() {
   return (
-    <div className="font-poppins">
+    <div className="font-poppins mx-5 md:mx-10">
       <HeroSection />
       <ReviewSlider />
       <AllProductsInHome />

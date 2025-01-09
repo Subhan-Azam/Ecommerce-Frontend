@@ -6,8 +6,8 @@ interface ReviewCardPropsTypes {
 
 const ReviewCard: React.FC<ReviewCardPropsTypes> = ({ src, title }) => {
   return (
-    <div className="">
-      <div className="flex justify-around items-center border w-[380px] h-[147px] rounded-[20px]">
+    <>
+      <div className="flex justify-around items-center border w-full min-h-[147px] rounded-[20px]">
         <img
           src={src}
           className="w-[100px] h-[100px] aspect-[3/2] object-contain"
@@ -18,7 +18,7 @@ const ReviewCard: React.FC<ReviewCardPropsTypes> = ({ src, title }) => {
           <p className="font-[500] text-[18px]">(6 items)</p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default ReviewCard;

@@ -3,15 +3,17 @@ import CategoriesCheckBox from "../(components)/categories/categoriesCheckBox/Ca
 import CategoriesHeading from "../(components)/categories/categoriesHeading/CategoriesHeading.tsx";
 import ProductCard from "../(components)/productCard/ProductCard.tsx";
 import SalesSec from "../(components)/salesSec/SalesSec.tsx";
-
-import { useSelector, useDispatch } from "react-redux";
 import Loader from "../(components)/loader/Loader.tsx";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../store/slices/allProductsSlice.ts";
 import { AppDispatch, RootState } from "../store/store.ts";
 
-
 export default function AllCategories() {
-  const getAllProducts = useSelector((store:RootState) => store.storeProducts.products);
+  const getAllProducts = useSelector(
+    (store: RootState) => store.storeProducts.products
+  );
+
   const dispatchProduct = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -21,47 +23,40 @@ export default function AllCategories() {
   return (
     <>
       <div className="font-poppins grid grid-cols-4 gap-5 my-24 mx-10">
-        {/* Section 1 */}
         <div className="container mx-auto gap-5 w-full lg:max-w-[315px] lg:w-full col-span-4 lg:col-span-1">
-          {/*  */}
           <div className="py-5">
             <CategoriesHeading />
             <div className="my-3">
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
+              <CategoriesCheckBox title="All Products" />
+              <CategoriesCheckBox title="electronics" />
+              <CategoriesCheckBox title="jewelery" />
+              <CategoriesCheckBox title="men's clothing" />
+              <CategoriesCheckBox title="women's clothing" />
             </div>
           </div>
           <hr className="w-full lg:max-w-[314px]" />
-          {/*  */}
           <div className="py-5">
             <CategoriesHeading />
             <div className="my-3">
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
+              <CategoriesCheckBox title="Categories" />
+              <CategoriesCheckBox title="Categories" />
             </div>
           </div>
           <hr className="w-full lg:max-w-[314px]" />
-          {/*  */}
           <div className="py-5">
             <CategoriesHeading />
             <div className="my-3">
-              <CategoriesCheckBox />
+              <CategoriesCheckBox title="Categories" />
             </div>
           </div>
           <hr className="w-full lg:max-w-[314px]" />
-          {/*  */}
           <div className="py-5">
             <CategoriesHeading />
             <div className="my-3">
-              <CategoriesCheckBox />
+              <CategoriesCheckBox title="Categories" />
             </div>
           </div>
           <hr className="w-full lg:max-w-[314px]" />
-          {/*  */}
           <div className="py-5">
             <CategoriesHeading />
             <div className="my-3 flex justify-between">
@@ -80,10 +75,10 @@ export default function AllCategories() {
           <div className="py-5">
             <CategoriesHeading />
             <div className="my-3">
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
-              <CategoriesCheckBox />
+              <CategoriesCheckBox title="Categories" />
+              <CategoriesCheckBox title="Categories" />
+              <CategoriesCheckBox title="Categories" />
+              <CategoriesCheckBox title="Categories" />
             </div>
           </div>
           <hr className="w-full lg:max-w-[314px]" />
@@ -99,11 +94,13 @@ export default function AllCategories() {
             {getAllProducts?.map((product, index) => {
               return (
                 <div key={index} className="">
-                  <ProductCard
-                    src={product?.image}
-                    title={product?.title.slice(0, 20) + "..."}
-                    price={product?.price}
-                  />
+                  <Link to={`/single-product/${product.id}`}>
+                    <ProductCard
+                      src={product?.image}
+                      title={product?.title.slice(0, 20) + "..."}
+                      price={product?.price}
+                    />
+                  </Link>
                 </div>
               );
             })}

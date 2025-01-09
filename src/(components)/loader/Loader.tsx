@@ -3,7 +3,7 @@ import React from "react";
 export default function Loader() {
   return (
     <>
-      <div className="my-24" role="status">
+      <div className="" role="status">
         <svg
           aria-hidden="true"
           className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"

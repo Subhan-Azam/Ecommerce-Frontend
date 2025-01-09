@@ -9,6 +9,8 @@ import { Autoplay } from "swiper/modules";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchReviews } from "../../store/slices/allReviewsSlice.ts";
 import { AppDispatch, RootState } from "../../store/store.ts";
+import { Link } from "react-router-dom";
+import Loader from "../loader/Loader.tsx";
 
 export default function ReviewSlider() {
   const getAllReviews = useSelector(
@@ -20,41 +22,49 @@ export default function ReviewSlider() {
   }, [dispatchReviews]);
 
   return (
-    <div className="container mx-auto ">
+    <div className="mx-3 md:mx-10">
       <div className="flex justify-center mt-10 mb-20">
-        <Swiper
-          loop={true}
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={50}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {getAllReviews?.map((review, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <ReviewCard
-                  src={review?.image}
-                  title={review?.title.slice(0, 10) + "..."}
-                />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+        {getAllReviews.length ? (
+          <Swiper
+            loop={true}
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={50}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              640: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            {getAllReviews?.map((review) => {
+              return (
+                <SwiperSlide key={review.id}>
+                  <Link to={`/single-product/${review.id}`}>
+                    <div className="flex justify-center items-center ">
+                      <ReviewCard
+                        src={review?.image}
+                        title={review?.title.slice(0, 10) + "..."}
+                      />
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   );
