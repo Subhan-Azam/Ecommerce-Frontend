@@ -65,7 +65,7 @@ const AllProductsInHome = () => {
 
       {/* <div className="flex flex-wrap justify-center md:justify-around lg:justify-center"> */}
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-[26.56px]">
-        {filteredProducts.length ? (
+        {!filteredProducts.length ? (
           filteredProducts.map((product) => (
             <div key={product.id} className="cursor-pointer">
               <Link to={`/single-product/${product.id}`}>
@@ -78,7 +78,7 @@ const AllProductsInHome = () => {
             </div>
           ))
         ) : (
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center w-full col-span-4 ">
             <Loader />
           </div>
         )}
