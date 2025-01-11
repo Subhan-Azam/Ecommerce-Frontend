@@ -12,37 +12,42 @@ export default function CompanyMemberSec() {
   const CompanyMember3 = require("../../assets/Frame 61 (2).png");
   return (
     <>
-      <div className="container mx-auto flex my-16">
-        <Swiper
-          loop={true}
-          modules={[Autoplay]}
-          spaceBetween={50}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {[`${CompanyMember1}`, `${CompanyMember2}`, `${CompanyMember1}`, `${CompanyMember2}`].map(
-            (company, index) => {
+      <div className="container mx-auto my-16">
+        <div className="md:mx-0 mx-5">
+          <Swiper
+            loop={true}
+            modules={[Autoplay]}
+            spaceBetween={50}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            {[
+              `${CompanyMember1}`,
+              `${CompanyMember2}`,
+              `${CompanyMember1}`,
+              `${CompanyMember2}`,
+            ].map((company, index) => {
               return (
                 <SwiperSlide key={index}>
                   <CompanyMemberCard src={company} />
                 </SwiperSlide>
               );
-            }
-          )}
-        </Swiper>
+            })}
+          </Swiper>
+        </div>
       </div>
     </>
   );

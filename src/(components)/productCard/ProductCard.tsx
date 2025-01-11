@@ -15,8 +15,8 @@ const ProductCard: React.FC<ProductCardPropsTypes> = ({
 }) => {
   const StarsImg = require("../../assets/stars.png");
   return (
-    <div>
-      <div className="border border-[#B6B6B6] w-[300px] h-[313px] cursor-pointer group relative rounded-[20px] hover:shadow-md p-4">
+    <>
+      <div className=" group relative border border-[#B6B6B6] w-[300px] h-[313px] cursor-pointer rounded-[20px] hover:shadow-md p-4">
         <div className="flex items-center justify-center py-2">
           <img
             className="w-[160px] h-[160px] aspect-[3/2] object-contain"
@@ -54,7 +54,7 @@ const ProductCard: React.FC<ProductCardPropsTypes> = ({
 
         {/*  */}
       </div>
-    </div>
+    </>
   );
 };
 

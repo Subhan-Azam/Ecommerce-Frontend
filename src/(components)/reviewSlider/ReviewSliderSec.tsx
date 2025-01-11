@@ -20,8 +20,8 @@ export default function ReviewSliderSec() {
   }, [dispatchReviews]);
 
   return (
-    <div className="mx-3 md:mx-10">
-      <div className="flex justify-center mt-10 mb-20">
+    <>
+      <div className="flex justify-center md:mx-0 mx-5 mt-10 mb-20">
         {getAllReviews.length ? (
           <Swiper
             loop={true}
@@ -60,6 +60,6 @@ export default function ReviewSliderSec() {
           <Loader />
         )}
       </div>
-    </div>
+    </>
   );
 }

@@ -13,9 +13,9 @@ import "swiper/swiper-bundle.css";
 export default function Home() {
   return (
     <div className="font-poppins mx-0 md:mx-10">
-      <HeroSection />
-      <ReviewSliderSec />
       <div className="max-w-[1325px] w-full mx-auto">
+        <HeroSection />
+        <ReviewSliderSec />
         <AllProductsInHome />
         <SalesSec />
         <JblBar />
