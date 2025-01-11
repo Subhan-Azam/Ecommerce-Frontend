@@ -4,9 +4,9 @@ import SearchBtn from "../buttons/SearchBtn.tsx";
 export default function SalesSec() {
   const bgImg = require("../../assets/bgImg.png");
   return (
-    <div className="mx-5">
+    <>
       <div
-        className="container mx-auto h-[417px] rounded-[20px] flex flex-col justify-center items-center pr-0 lg:items-end lg:pr-[130px] my-16 relative"
+        className="container mx-auto w-full h-[417px] rounded-none md:rounded-[20px] flex flex-col justify-center items-center pr-0 lg:items-end lg:pr-[130px] mt-10 my-0 md:my-16 relative"
         style={{
           backgroundImage: `url(${bgImg})`,
           backgroundSize: "cover",
@@ -30,6 +30,6 @@ export default function SalesSec() {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 }

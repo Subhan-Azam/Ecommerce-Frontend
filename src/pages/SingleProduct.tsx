@@ -40,23 +40,21 @@ export default function SingleProduct() {
   }
 
   return (
-    <>
-      <section className="mx-5 md:mx-10 py-8 md:py-16 dark:bg-gray-900 antialiased">
-        <div className="mx-10 px-4 2xl:px-0">
+    <div className="font-poppins container mx-auto max-w-[1320px] w-full">
+      <section className="mx-5 md:mx-10">
+        <div className="mx-5 md:mx-10 py-0 md:py-16 dark:bg-gray-900 antialiased">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-            <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto">
-              <div className="flex justify-center">
-                <img className="w-full p-10" src={product.image} alt="" />
-              </div>
+            <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto flex justify-center">
+              <img className="w-full p-10" src={product.image} alt="" />
             </div>
 
             <div className="mt-6 sm:mt-8 lg:mt-0">
-              <h1 className="font-[600] text-[30px] text-[#003F62]">
+              <h1 className="font-[600] text-[29px] md:text-[30px] text-[#003F62]">
                 {product.title}
               </h1>
               <div className="mt-4">
                 <p className="text-[30px] font-[600] text-[#4A4A4A] sm:text-3xl dark:text-white">
-                  $:{product.price}
+                  ${product.price}
                 </p>
 
                 <div className="flex items-center gap-2 mt-2 sm:mt-3">
@@ -129,22 +127,19 @@ export default function SingleProduct() {
                     </button>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-7 my-4 ">
+                <div className="flex justify-center md:justify-start gap-7 my-10 ">
                   <SearchBtn
                     style={
-                      "bg-[#EDA415] text-white w-[300px] h-[55px] md:w-[240px] md:h-[70px] rounded-[32px] text-[22px] font-[600]"
+                      "bg-[#EDA415] text-white w-[187px] md:w-[240px] h-[70px] rounded-[32px] text-[22px] font-[600]"
                     }
                     content="Add to cart"
                   />
                   <SearchBtn
                     style={
-                      "bg-[#EDA415] text-white w-[300px] h-[55px] md:w-[240px] md:h-[70px] rounded-[32px] text-[22px] font-[600]"
+                      "bg-[#EDA415] text-white w-[187px] md:w-[240px] h-[70px] rounded-[32px] text-[22px] font-[600]"
                     }
                     content="Buy it now"
                   />
-                  {/* <div className="w-[74px] h-[73px] bg-[#EEEEEE] rounded-full flex justify-center items-center">
-                    <TiHeartOutline size={36} />
-                  </div> */}
                 </div>
 
                 <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
@@ -175,26 +170,26 @@ export default function SingleProduct() {
         <div className="flex flex-wrap justify-center gap-5 md:gap-10 mt-16 md:mt-28">
           <SearchBtn
             style={
-              "bg-[#003F62] text-white w-[300px] md:w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
+              "border border-[003F62] text-[003F62] w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
             }
             content="Description"
           />
           <SearchBtn
             style={
-              "border border-[003F62] text-[003F62] w-[300px] md:w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
+              "bg-[#003F62] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
             }
             content="Reviews"
           />
         </div>
 
-          <div className="container mx-auto mt-10 border py-8 rounded-[20px] text-center px-0 md:px-10 md:text-start">
-            <h2 className="font-[600] text-[22px]">Customer reviews</h2>
-            <p className="py-3">No reviews yet</p>
-            <button className="bg-[#003F62] underline text-white py-2 px-5">
-              Write a review
-            </button>
-          </div>
-
+        <div className="container mx-auto mt-10 border py-8 rounded-[20px] text-center px-0 md:px-10 md:text-start">
+          <h2 className="font-[600] text-[22px]">Customer reviews</h2>
+          <p className="py-3">No reviews yet</p>
+          <button className="bg-[#003F62] underline text-white py-2 px-5">
+            Write a review
+          </button>
+        </div>
+        {/* 
         <div className="container mx-auto mt-10">
           <h1 className="text-[#1B5A7D] font-[600] text-[27px] my-8">
             Related product
@@ -202,10 +197,8 @@ export default function SingleProduct() {
           <div className="flex justify-center">
             <Swiper
               loop={true}
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={50}
-              navigation
-              pagination={{ clickable: true }}
+              modules={[Autoplay]}
+              spaceBetween={30}
               autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,
@@ -217,7 +210,7 @@ export default function SingleProduct() {
                 768: {
                   slidesPerView: 2,
                 },
-                1024: {
+                1020: {
                   slidesPerView: 3,
                 },
                 1080: {
@@ -246,6 +239,11 @@ export default function SingleProduct() {
                   title: "Tablet as a laptop",
                   price: "$11,70",
                 },
+                {
+                  src: require("../assets/camera card.png"),
+                  title: "Wireless headphones",
+                  price: "$11,70",
+                },
               ].map((card, index) => (
                 <SwiperSlide key={index}>
                   <div className="flex justify-center gap-5">
@@ -259,8 +257,8 @@ export default function SingleProduct() {
               ))}
             </Swiper>
           </div>
-        </div>
+        </div> */}
       </section>
-    </>
+    </div>
   );
 }

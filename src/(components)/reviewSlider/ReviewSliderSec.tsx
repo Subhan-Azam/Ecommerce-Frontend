@@ -3,8 +3,6 @@ import ReviewCard from "./ReviewCard.tsx";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Pagination } from "swiper/modules";
-import { Navigation } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchReviews } from "../../store/slices/allReviewsSlice.ts";
@@ -27,10 +25,8 @@ export default function ReviewSliderSec() {
         {getAllReviews.length ? (
           <Swiper
             loop={true}
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Autoplay]}
             spaceBetween={50}
-            navigation
-            pagination={{ clickable: true }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -51,12 +47,10 @@ export default function ReviewSliderSec() {
               return (
                 <SwiperSlide key={review.id}>
                   <Link to={`/single-product/${review.id}`}>
-                    <div className="flex justify-center items-center ">
-                      <ReviewCard
-                        src={review?.image}
-                        title={review?.title.slice(0, 10) + "..."}
-                      />
-                    </div>
+                    <ReviewCard
+                      src={review?.image}
+                      title={review?.title.slice(0, 10) + "..."}
+                    />
                   </Link>
                 </SwiperSlide>
               );

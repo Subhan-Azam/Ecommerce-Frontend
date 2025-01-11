@@ -30,13 +30,13 @@ const AllProductsInHome = () => {
     : getAllProducts;
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="flex justify-center lg:justify-between flex-wrap items-center">
-        <h2 className="mb-8 text-center text-2xl md:text-3xl font-bold text-[#1B5A7D]">
+    <>
+      <div className="flex justify-center items-center lg:justify-between flex-wrap my-8 mb-10">
+        <h2 className="mb-5 md:mb-0 text-center text-[27px] font-[600] text-[#1B5A7D]">
           Popular Products
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
+        <div className="flex flex-wrap justify-center gap-4">
           <button
             onClick={() => setSelectedCategory(null)}
             className={`w-[139px] h-[45px] rounded-[20px] ${
@@ -63,7 +63,7 @@ const AllProductsInHome = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-5">
+      <div className="flex flex-wrap justify-center md:justify-around lg:justify-between gap-5">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div key={product.id} className="cursor-pointer">
@@ -82,7 +82,7 @@ const AllProductsInHome = () => {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

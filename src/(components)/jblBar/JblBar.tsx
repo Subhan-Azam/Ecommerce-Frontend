@@ -8,7 +8,7 @@ export default function JblBar() {
   const starsImg = require("../../assets/stars.png");
 
   return (
-    <div className="mx-5">
+    <div className="mx-5 hidden lg:block">
       <div className="container mx-auto p-4">
         <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-7">
           {/* ✅ Large Speaker Card (Main Product) */}
@@ -26,7 +26,7 @@ export default function JblBar() {
                 $11,70
               </h3>
               <img src={starsImg} alt="stars" className="mx-auto lg:mx-0" />
-              <div className="flex gap-3 justify-center lg:justify-start text-[#EDA415] font-bold text-lg mt-5">
+              <div className="flex gap-3 flex-wrap justify-center lg:justify-start text-[#EDA415] font-bold text-lg mt-5">
                 {["57", "11", "33", "59"].map((num, idx) => (
                   <div
                     key={idx}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function NavbarSec3() {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center px-4 py-4 md:py-0 md:px-10  bg-[#F4F4F4]">
+    <div className="flex flex-col md:flex-row justify-between items-center px-4 py-4 md:py-0 md:px-10 bg-[#F4F4F4]">
       <div className="flex flex-col md:flex-row items-center w-full md:w-auto gap-5 md:gap-10">
         <Link to="/allCategories">
           <button className="bg-[#EDA415] flex items-center justify-center w-[218px] h-[70px] text-white text-[16px] font-[500] gap-2">

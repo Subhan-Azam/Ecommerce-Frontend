@@ -7,7 +7,7 @@ interface LatestNewsCardPropsTypes {
 const LatestNewsCard: React.FC<LatestNewsCardPropsTypes> = ({ src }) => {
   return (
     <>
-      <div className="border rounded-[20px] p-4 my-5 lg:w-[630px] min-h-[369px]">
+      <div className="border rounded-[20px] p-4 lg:w-[650px]">
         <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
           <img
             alt="team"
@@ -15,8 +15,8 @@ const LatestNewsCard: React.FC<LatestNewsCardPropsTypes> = ({ src }) => {
             src={src}
           />
           <div className="flex-grow sm:pl-8 text-[#1B5A7D]">
-            <div className="border rounded-[20px] w-[147px] text-center py-2 -mt-1">
-              <span>22,oct,2021</span>
+            <div className="flex justify-center md:justify-start">
+              <span className="border rounded-[20px] w-[147px] text-center py-2 px-5">22,oct,2021</span>
             </div>
             <h2 className="title-font font-[600] text-[22px] mt-2 mb-3">
               Who avoids a pain that produces?

@@ -12,16 +12,18 @@ import "swiper/swiper-bundle.css";
 
 export default function Home() {
   return (
-    <div className="font-poppins mx-5 md:mx-10">
+    <div className="font-poppins mx-0 md:mx-10">
       <HeroSection />
       <ReviewSliderSec />
-      <AllProductsInHome />
-      <SalesSec />
-      <JblBar />
-      <FreeDiliverySec />
-      <CompanyMemberSec />
-      <LogosSec />
-      <LatestNewsSec />
+      <div className="max-w-[1325px] w-full mx-auto">
+        <AllProductsInHome />
+        <SalesSec />
+        <JblBar />
+        <FreeDiliverySec />
+        <CompanyMemberSec />
+        <LogosSec />
+        <LatestNewsSec />
+      </div>
     </div>
   );
 }

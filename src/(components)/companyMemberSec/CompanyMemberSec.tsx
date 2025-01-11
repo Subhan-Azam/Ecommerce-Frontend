@@ -15,10 +15,8 @@ export default function CompanyMemberSec() {
       <div className="container mx-auto flex my-16">
         <Swiper
           loop={true}
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Autoplay]}
           spaceBetween={50}
-          navigation
-          pagination={{ clickable: true }}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
@@ -35,7 +33,7 @@ export default function CompanyMemberSec() {
             },
           }}
         >
-          {[`${CompanyMember1}`, `${CompanyMember2}`, `${CompanyMember1}`].map(
+          {[`${CompanyMember1}`, `${CompanyMember2}`, `${CompanyMember1}`, `${CompanyMember2}`].map(
             (company, index) => {
               return (
                 <SwiperSlide key={index}>

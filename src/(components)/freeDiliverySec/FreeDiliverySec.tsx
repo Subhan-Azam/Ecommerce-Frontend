@@ -8,7 +8,7 @@ const FreeDiliverySec = () => {
 
   return (
     <div className="">
-      <div className="container mx-auto my-8  bg-[#E2F4FF] p-4 rounded-[20px]">
+      <div className="container mx-auto my-0 md:my-8 bg-[#E2F4FF] p-4 rounded-none md:rounded-[20px]">
         <div className="px-0 md:px-20 mx-auto flex flex-wrap flex-col md:flex-row justify-center gap-3 lg:justify-between items-center space-y-10 md:space-y-0">
           <DiliveryCard
             src={icon1}
