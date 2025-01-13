@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import Loader from "../loader/Loader.tsx";
 
 const AllProductsInHome = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   const getAllProducts = useSelector(
     (store: RootState) => store.storeProducts.products
   );
@@ -17,8 +19,6 @@ const AllProductsInHome = () => {
 
   const dispatchProduct = useDispatch<AppDispatch>();
   const dispatchCategories = useDispatch<AppDispatch>();
-
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   useEffect(() => {
     dispatchProduct(fetchProducts());
@@ -63,7 +63,6 @@ const AllProductsInHome = () => {
         </div>
       </div>
 
-      {/* <div className="flex flex-wrap justify-center md:justify-around lg:justify-center"> */}
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-[26.56px]">
         {filteredProducts.length ? (
           filteredProducts.map((product) => (

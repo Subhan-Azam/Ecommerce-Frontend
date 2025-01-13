@@ -46,15 +46,9 @@ export default function SingleProduct() {
               onLoad={() => setIsImageLoaded(true)}
               style={{ display: isImageLoaded ? "block" : "none" }}
             />
-
-            {/* <img
-              className="w-full p-10 aspect-[3/2] object-contain"
-              src={product.image}
-              alt="Product Image"
-            /> */}
           </div>
           <div className="mt-6 sm:mt-8 lg:mt-0">
-            <h1 className="font-[600] text-[29px] md:text-[30px] text-[#003F62]">
+            <h1 className="font-[600] text-[30px] text-[#003F62]">
               {product.title}
             </h1>
             <div className="mt-4">
