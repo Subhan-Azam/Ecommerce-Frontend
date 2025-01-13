@@ -126,18 +126,16 @@ export default function SingleProduct() {
                   </button>
                 </div>
               </div>
-              <div className="flex sm:flex-nowrap flex-wrap justify-start sm:justify-center gap-7 my-10 ">
+              <div className="flex sm:flex-nowrap flex-wrap justify-center sm:justify-start gap-7 my-10 ">
                 <SearchBtn
                   style={
                     "bg-[#EDA415] text-white h-[60px] rounded-[20px] font-[600] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
-                    // "bg-[#EDA415] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[600]"
                   }
                   content="Add to cart"
                 />
                 <SearchBtn
                   style={
                     "bg-[#EDA415] text-white h-[60px] rounded-[20px] font-[600] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
-                    // "bg-[#EDA415] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[600]"
                   }
                   content="Buy it now"
                 />
@@ -177,7 +175,7 @@ export default function SingleProduct() {
         />
         <SearchBtn
           style={
-                  "bg-[#003F62] text-white text-[003F62]  h-[60px] rounded-[20px] font-[500] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
+            "bg-[#003F62] text-white text-[003F62]  h-[60px] rounded-[20px] font-[500] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
             // "bg-[#003F62] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
           }
           content="Reviews"
