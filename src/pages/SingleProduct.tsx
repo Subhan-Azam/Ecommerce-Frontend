@@ -41,7 +41,7 @@ export default function SingleProduct() {
 
   return (
     <section className="font-poppins container mx-auto max-w-[1320px] w-full">
-      <div className="mx-5 md:mx-10 py-0 md:py-16 dark:bg-gray-900 antialiased">
+      <div className="mx-5 md:mx-10 py-0 md:py-16 antialiased">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
           <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto flex justify-center">
             <img className="w-full p-10" src={product.image} alt="" />
@@ -126,16 +126,18 @@ export default function SingleProduct() {
                   </button>
                 </div>
               </div>
-              <div className="flex justify-center md:justify-start gap-7 my-10 ">
+              <div className="flex sm:flex-nowrap flex-wrap justify-start sm:justify-center gap-7 my-10 ">
                 <SearchBtn
                   style={
-                    "bg-[#EDA415] text-white w-[187px] md:w-[240px] h-[70px] rounded-[32px] text-[22px] font-[600]"
+                    "bg-[#EDA415] text-white h-[60px] rounded-[20px] font-[600] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
+                    // "bg-[#EDA415] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[600]"
                   }
                   content="Add to cart"
                 />
                 <SearchBtn
                   style={
-                    "bg-[#EDA415] text-white w-[187px] md:w-[240px] h-[70px] rounded-[32px] text-[22px] font-[600]"
+                    "bg-[#EDA415] text-white h-[60px] rounded-[20px] font-[600] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
+                    // "bg-[#EDA415] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[600]"
                   }
                   content="Buy it now"
                 />
@@ -169,13 +171,14 @@ export default function SingleProduct() {
       <div className="mx-5 md:mx-10 flex flex-wrap justify-center gap-5 md:gap-10 mt-16 md:mt-28">
         <SearchBtn
           style={
-            "border border-[003F62] text-[003F62] w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
+            "border border-[003F62] text-[003F62]  h-[60px] rounded-[20px] font-[500] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
           }
           content="Description"
         />
         <SearchBtn
           style={
-            "bg-[#003F62] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
+                  "bg-[#003F62] text-white text-[003F62]  h-[60px] rounded-[20px] font-[500] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
+            // "bg-[#003F62] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
           }
           content="Reviews"
         />
