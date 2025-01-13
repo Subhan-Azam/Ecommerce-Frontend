@@ -18,7 +18,7 @@ export default function NavbarSec2() {
             alt="Logo"
           />
         </Link>
-        <div className="hidden md:flex bg-white rounded-[20px] w-full md:w-auto items-center">
+        <div className="hidden lg:flex bg-white rounded-[20px] w-full md:w-auto items-center">
           <input
             className="outline-none px-4 py-2 rounded-l-2xl w-full md:w-[200px] lg:w-[300px] text-sm"
             type="text"

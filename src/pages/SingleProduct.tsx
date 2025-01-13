@@ -1,25 +1,19 @@
 import React, { useState } from "react";
 import { CiStar } from "react-icons/ci";
 import SearchBtn from "../(components)/buttons/SearchBtn.tsx";
-import ProductCard from "../(components)/productCard/ProductCard.tsx";
-
+// import ProductCard from "../(components)/productCard/ProductCard.tsx";
 import { SlSocialGoogle } from "react-icons/sl";
 import { PiWhatsappLogoLight, PiFacebookLogo } from "react-icons/pi";
 
-// Swiper Slider
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
-import { Pagination } from "swiper/modules";
-import { Navigation } from "swiper/modules";
-import { Autoplay } from "swiper/modules";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store.ts";
+import Loader from "../(components)/loader/Loader.tsx";
 
 export default function SingleProduct() {
-  const gamePad3 = require("../assets/game pad (2).png");
-
   const [count, setCount] = useState(0);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   const increment = () => {
     setCount(count + 1);
   };
@@ -36,17 +30,29 @@ export default function SingleProduct() {
 
   const product = allProduct.find((p) => p.id === Number(id));
   if (!product) {
-    return <p>Data not found</p>;
+    return <p className="text-center text-red-500 font-bold">Data not found</p>;
   }
 
   return (
     <section className="font-poppins container mx-auto max-w-[1320px] w-full">
       <div className="mx-5 md:mx-10 py-0 md:py-16 antialiased">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-          <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto flex justify-center">
-            <img className="w-full p-10" src={product.image} alt="" />
-          </div>
+          <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto flex items-start justify-center">
+            {!isImageLoaded && <Loader />}
+            <img
+              className="w-full p-10 aspect-[3/2] object-contain"
+              src={product.image}
+              alt="Product Image"
+              onLoad={() => setIsImageLoaded(true)}
+              style={{ display: isImageLoaded ? "block" : "none" }}
+            />
 
+            {/* <img
+              className="w-full p-10 aspect-[3/2] object-contain"
+              src={product.image}
+              alt="Product Image"
+            /> */}
+          </div>
           <div className="mt-6 sm:mt-8 lg:mt-0">
             <h1 className="font-[600] text-[29px] md:text-[30px] text-[#003F62]">
               {product.title}
@@ -176,7 +182,6 @@ export default function SingleProduct() {
         <SearchBtn
           style={
             "bg-[#003F62] text-white text-[003F62]  h-[60px] rounded-[20px] font-[500] w-[150px] text-[18px] sm:w-[187px] sm:text-[20px]"
-            // "bg-[#003F62] text-white w-[187px] h-[60px] rounded-[20px] text-[20px] font-[500]"
           }
           content="Reviews"
         />
