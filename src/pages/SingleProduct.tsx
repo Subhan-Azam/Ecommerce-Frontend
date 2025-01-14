@@ -40,7 +40,7 @@ export default function SingleProduct() {
           <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto flex items-start justify-center">
             {!isImageLoaded && <Loader />}
             <img
-              className="w-full p-10 aspect-[3/2] object-contain"
+              className="w-full p-10 "
               src={product.image}
               alt="Product Image"
               onLoad={() => setIsImageLoaded(true)}
