@@ -9,7 +9,7 @@ export default function LogosSec() {
 
   return (
     <div className="container mx-auto">
-      <div className="bg-[#E2F4FF] flex items-center md:py-0 py-10 w-full min-h-[136px]">
+      <div className="bg-[#E2F4FF] flex items-center lg:py-0 py-10 w-full min-h-[136px]">
         <div className="mx-auto flex flex-wrap justify-center lg:justify-around gap-10">
           <img src={logosImg1} alt="" className="my-1 sm:my-3" />
           <img src={logosImg2} alt="" className="my-1 sm:my-3" />

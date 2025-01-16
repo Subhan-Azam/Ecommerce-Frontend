@@ -6,10 +6,10 @@ interface companyMemberCardPropsTypes {
 const companyMemberCard: React.FC<companyMemberCardPropsTypes> = ({ src }) => {
   return (
     <div className="flex justify-center cursor-pointer">
-      <div className="bg-card border rounded-[20px] p-4 my-5 max-w-[432px] w-full">
+      <div className="group border border-[#B6B6B6] rounded-[20px] bg-card p-4 my-5 max-w-[432px] w-full">
         <div className="flex items-center gap-[37px]">
           <img
-            className="w-[100px] h-[100px] rounded-full"
+            className="w-[100px] h-[100px] rounded-full transition-transform duration-300 group-hover:scale-110"
             src={src}
             alt="Savannah Nguyen"
           />

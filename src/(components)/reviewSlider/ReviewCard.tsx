@@ -7,10 +7,10 @@ interface ReviewCardPropsTypes {
 const ReviewCard: React.FC<ReviewCardPropsTypes> = ({ src, title }) => {
   return (
     <>
-      <div className="flex justify-around items-center border w-full min-h-[147px] rounded-[20px]">
+      <div className="group flex justify-around items-center border border-[#B6B6B6] w-full min-h-[147px] rounded-[20px]">
         <img
           src={src}
-          className="w-[100px] h-[100px] aspect-[3/2] object-contain"
+          className="w-[100px] h-[100px] aspect-[3/2] object-contain transition-transform duration-300 group-hover:scale-110"
           alt=""
         />
         <div className="text-[#1B5A7D]">

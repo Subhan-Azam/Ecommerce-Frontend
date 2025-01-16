@@ -8,11 +8,11 @@ export default function JblBar() {
   const starsImg = require("../../assets/stars.png");
 
   return (
-    <div className="mx-5 hidden lg:block">
-      <div className="container mx-auto p-4">
+    <div className="lg:mx-0 lg:block mx-5 hidden">
+      <div className="container mx-auto">
         <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-7">
           {/* ✅ Large Speaker Card (Main Product) */}
-          <div className="w-full lg:w-[60%] border border-[#B6B6B6] rounded-[20px] p-4 flex flex-col items-center lg:flex-row">
+          <div className="w-full lg:w-[803px] border border-[#B6B6B6] rounded-[20px] p-4 flex flex-col items-center lg:flex-row">
             <img
               alt="speaker"
               className="rounded-lg w-full sm:w-[345px] max-w-full h-auto object-cover"
@@ -40,7 +40,7 @@ export default function JblBar() {
           </div>
 
           {/* ✅ Mini Cards (Smaller Products) */}
-          <div className="w-full lg:w-[35%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5">
+          <div className="w-full lg:w-[35%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-[23px]">
             <JblBarMiniCard src={gamePadImg} />
             <JblBarMiniCard src={laptopImg} />
           </div>

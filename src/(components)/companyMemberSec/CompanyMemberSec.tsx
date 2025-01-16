@@ -37,7 +37,7 @@ export default function CompanyMemberSec() {
             {[
               `${CompanyMember1}`,
               `${CompanyMember2}`,
-              `${CompanyMember1}`,
+              `${CompanyMember3}`,
               `${CompanyMember2}`,
             ].map((company, index) => {
               return (

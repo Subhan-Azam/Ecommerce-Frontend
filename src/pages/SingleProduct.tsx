@@ -34,13 +34,13 @@ export default function SingleProduct() {
   }
 
   return (
-    <section className="font-poppins container mx-auto max-w-[1320px] w-full">
+    <section className="font-poppins container mx-auto px-5 max-w-[1360px] w-full">
       <div className="mx-5 md:mx-10 py-0 md:py-16 antialiased">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
           <div className="shrink-0 max-w-[500px] min-h-4 w-full mt-10 mx-auto flex items-start justify-center">
             {!isImageLoaded && <Loader />}
             <img
-              className="w-full p-10 "
+              className="w-full p-10"
               src={product.image}
               alt="Product Image"
               onLoad={() => setIsImageLoaded(true)}
@@ -181,8 +181,8 @@ export default function SingleProduct() {
         />
       </div>
 
-      <div className="container mx-auto ">
-        <div className="mx-5 md:mx-10 mt-10 border py-8 rounded-[20px] text-center px-0 md:px-10 md:text-start">
+      <div className="container mx-auto">
+        <div className="mt-10 border border-[#B6B6B6] py-8 rounded-[20px] text-center px-0 md:px-10 md:text-start">
           <h2 className="font-[600] text-[22px]">Customer reviews</h2>
           <p className="py-3">No reviews yet</p>
           <button className="bg-[#003F62] underline text-white py-2 px-5">

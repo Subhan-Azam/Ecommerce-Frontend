@@ -82,44 +82,40 @@ const ProductCard: React.FC<ProductCardPropsTypes> = ({
   const StarsImg = require("../../assets/stars.png");
   const [loading, setLoading] = useState(false);
 
-
   const handleAddToCart = () => {
-  setLoading(true);
+    setLoading(true);
 
-  setTimeout(() => {
-    const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
+    setTimeout(() => {
+      const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    const newProduct = { id, src, title, price, category, description };
+      const newProduct = { id, src, title, price, category, description };
 
-    const isProductInCart = existingCart.some((item: any) => item.id === id);
+      const isProductInCart = existingCart.some((item: any) => item.id === id);
 
-    if (!isProductInCart) {
-      existingCart.push(newProduct);
-      localStorage.setItem("cart", JSON.stringify(existingCart));
+      if (!isProductInCart) {
+        existingCart.push(newProduct);
+        localStorage.setItem("cart", JSON.stringify(existingCart));
 
-      alert("✅ Cart Updated Successfully!");
-    } else {
-      alert("⚠️ This product is already in the cart.");
-    }
+        alert("✅ Cart Updated Successfully!");
+      } else {
+        alert("⚠️ This product is already in the cart.");
+      }
 
-    setLoading(false);
-  }, 500);
-};
-
+      setLoading(false);
+    }, 500);
+  };
 
   return (
     <div className="group relative border border-[#B6B6B6] w-[300px] h-[313px] cursor-pointer rounded-[20px] hover:shadow-md p-4">
-      {/* Product Image */}
       <div className="flex items-center justify-center py-2">
         <img
-          className="w-[160px] h-[160px] aspect-[3/2] object-contain"
+          className="w-[160px] h-[160px] aspect-[3/2] object-contain transition-transform duration-300 group-hover:scale-110"
           src={src}
-          alt={title}
+          alt="Camera"
         />
       </div>
 
-      {/* Product Details */}
-      <div className="">
+      <div>
         <div className="absolute flex flex-col space-y-3 opacity-100 group-hover:hidden transition-opacity duration-300">
           <h3 className="text-[#003F62] text-[17px] font-[500] mt-2">
             {title.slice(0, 20)}...
@@ -131,9 +127,7 @@ const ProductCard: React.FC<ProductCardPropsTypes> = ({
           </div>
         </div>
 
-        {/* Hover content */}
         <div className="absolute bottom-5 left-[6px] flex gap-3 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-5 transition-all duration-300">
-          {/* Add to Cart Button */}
           <div className="border flex items-center justify-around rounded-[19px] bg-[#87BCD9] w-[204px] h-[60px] cursor-pointer">
             <button
               className="font-[600] text-[15px] px-4 py-2 bg-[#EDA415] text-white rounded-lg transition-all duration-300 disabled:bg-gray-400"
@@ -148,7 +142,6 @@ const ProductCard: React.FC<ProductCardPropsTypes> = ({
             </div>
           </div>
 
-          {/* View Details Button */}
           <div className="bg-[#87BCD9] w-[70px] h-[60px] rounded-[19px] flex items-center justify-center cursor-pointer">
             <FiEye size={23} />
           </div>

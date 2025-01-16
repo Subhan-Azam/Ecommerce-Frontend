@@ -7,7 +7,7 @@ interface JblBarMiniCardPropsTypes {
 const JblBarMiniCard: React.FC<JblBarMiniCardPropsTypes> = ({ src }) => {
   const starsImg = require("../../assets/stars.png");
   return (
-    <div className="flex flex-wrap sm:flex-nowrap items-center border rounded-[20px] border-[#B6B6B6] w-full min-h-[200px] p-4">
+    <div className="flex flex-wrap sm:flex-nowrap items-center border rounded-[20px] border-[#B6B6B6] max-w-[493px] w-full min-h-[195px] p-4">
       {/* ✅ Image Section */}
       <div className="flex items-center justify-center w-full sm:w-[40%]">
         <img
