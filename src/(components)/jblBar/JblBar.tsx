@@ -10,7 +10,7 @@ export default function JblBar() {
   return (
     <div className="lg:mx-0 lg:block mx-5 hidden">
       <div className="container mx-auto">
-        <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-7">
+        <div className="h-[505px] flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-7">
           {/* ✅ Large Speaker Card (Main Product) */}
           <div className="w-full lg:w-[803px] border border-[#B6B6B6] rounded-[20px] p-4 flex flex-col items-center lg:flex-row">
             <img
