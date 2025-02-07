@@ -1,7 +1,8 @@
+import React from "react";
 import { useState } from "react";
 
 const AddToCartButton = ({ product }: { product: any }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleAddToCart = () => {
     setLoading(true);
@@ -9,7 +10,6 @@ const AddToCartButton = ({ product }: { product: any }) => {
     setTimeout(() => {
       const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-      // Check if product already exists
       const isProductInCart = existingCart.some(
         (item: any) => item.id === product.id
       );
@@ -23,7 +23,7 @@ const AddToCartButton = ({ product }: { product: any }) => {
       }
 
       setLoading(false);
-    }, 500); // Simulate API delay
+    }, 500);
   };
 
   return (
@@ -36,7 +36,6 @@ const AddToCartButton = ({ product }: { product: any }) => {
       >
         {loading ? "Adding..." : "Add to Cart"}
       </button>
-
     </div>
   );
 };

@@ -1,34 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { CiStar } from "react-icons/ci";
 import SearchBtn from "../(components)/buttons/SearchBtn.tsx";
-// import ProductCard from "../(components)/productCard/ProductCard.tsx";
 import { SlSocialGoogle } from "react-icons/sl";
 import { PiWhatsappLogoLight, PiFacebookLogo } from "react-icons/pi";
-
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "../store/store.ts";
 import Loader from "../(components)/loader/Loader.tsx";
+import useCounter from "../hooks/useCounter.ts";
+import useSingleProduct from "../hooks/useSingleProduct.ts";
 
 export default function SingleProduct() {
-  const [count, setCount] = useState(0);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const { count, increment, decrement } = useCounter();
+  const { isImageLoaded, setIsImageLoaded, product } = useSingleProduct();
 
-  const increment = () => {
-    setCount(count + 1);
-  };
-  const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
-
-  const { id } = useParams();
-  const allProduct = useSelector(
-    (store: RootState) => store.storeProducts.products
-  );
-
-  const product = allProduct.find((p) => p.id === Number(id));
   if (!product) {
     return <p className="text-center text-red-500 font-bold">Data not found</p>;
   }
@@ -190,75 +172,6 @@ export default function SingleProduct() {
           </button>
         </div>
       </div>
-      {/* 
-        <div className="container mx-auto mt-10">
-          <h1 className="text-[#1B5A7D] font-[600] text-[27px] my-8">
-            Related product
-          </h1>
-          <div className="flex justify-center">
-            <Swiper
-              loop={true}
-              modules={[Autoplay]}
-              spaceBetween={30}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              breakpoints={{
-                1: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1020: {
-                  slidesPerView: 3,
-                },
-                1080: {
-                  slidesPerView: 4,
-                },
-              }}
-            >
-              {[
-                {
-                  src: require("../assets/camera card.png"),
-                  title: "Camera",
-                  price: "$321",
-                },
-                {
-                  src: require("../assets/camera card.png"),
-                  title: "Wireless headphones",
-                  price: "$11,70",
-                },
-                {
-                  src: require("../assets/camera card.png"),
-                  title: "Play game",
-                  price: "$11,70",
-                },
-                {
-                  src: require("../assets/camera card.png"),
-                  title: "Tablet as a laptop",
-                  price: "$11,70",
-                },
-                {
-                  src: require("../assets/camera card.png"),
-                  title: "Wireless headphones",
-                  price: "$11,70",
-                },
-              ].map((card, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex justify-center gap-5">
-                    <ProductCard
-                      src={card.src}
-                      title={card.title}
-                      price={card.price}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div> */}
     </section>
   );
 }

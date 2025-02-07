@@ -1,31 +1,12 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
-
-interface ProductState {
-  products: Product[];
-  filteredProducts: Product[];
-  loading: boolean;
-  error: string | null;
-  status: "idle" | "loading" | "succeeded" | "failed";
-}
+import { Product, ProductState } from "../../types/types";
+import { axiosInstance } from "../../utils/utils.ts";
 
 export const fetchProducts = createAsyncThunk<Product[]>(
   "product/fetchProducts",
   async () => {
-    const response = await axios.get("https://fakestoreapi.com/products");
+    const response = await axiosInstance.get("/");
     return response.data;
   }
 );
@@ -47,11 +28,20 @@ export const allProductSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      state.loading = false;
-      state.status = "succeeded";
-      state.products = action.payload;
-    });
+    builder
+      .addCase(fetchProducts.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.status = "succeeded";
+        state.products = action.payload;
+      })
+      .addCase(fetchProducts.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      });
   },
 });
 

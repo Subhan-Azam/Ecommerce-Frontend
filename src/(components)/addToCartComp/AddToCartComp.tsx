@@ -1,9 +1,7 @@
 import React from "react";
-interface AddToCartCompPropsTypes {
-  src: String;
-}
+import { PropsTypes } from "../../types/types";
 
-const AddToCartComp: React.FC<AddToCartCompPropsTypes> = ({ src }) => {
+const AddToCartComp: React.FC<PropsTypes> = ({ src }) => {
   return (
     <>
       <div className="w-full">

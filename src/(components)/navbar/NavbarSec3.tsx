@@ -18,7 +18,7 @@ export default function NavbarSec3() {
               <IoIosArrowDown size={20} />
             </div>
           </Link>
-          <Link to="/single-product">
+          <Link to="#">
             <div className="flex items-center gap-1 hover:text-[#EDA415]">
               Single Product
               <IoIosArrowDown size={20} />
@@ -35,7 +35,7 @@ export default function NavbarSec3() {
               <IoIosArrowDown size={20} />
             </div>
           </Link>
-          <Link to="/about">
+          <Link to="#">
             <div className="flex items-center gap-1 hover:text-[#EDA415]">
               About Us
             </div>

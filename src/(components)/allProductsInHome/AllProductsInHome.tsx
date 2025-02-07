@@ -1,33 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductCard from "../productCard/ProductCard.tsx";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchProducts } from "../../store/slices/allProductsSlice.ts";
-import { fetchAllCategories } from "../../store/slices/allCategoriesSlice.ts";
-import { AppDispatch, RootState } from "../../store/store.ts";
 import { Link } from "react-router-dom";
 import Loader from "../loader/Loader.tsx";
+import useAllProductHome from "../../hooks/useAllProductHome.ts";
 
 const AllProductsInHome = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  const getAllProducts = useSelector(
-    (store: RootState) => store.storeProducts.products
-  );
-  const getAllCategories = useSelector(
-    (store: RootState) => store.storeCategories.allCategories
-  );
-
-  const dispatchProduct = useDispatch<AppDispatch>();
-  const dispatchCategories = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatchProduct(fetchProducts());
-    dispatchCategories(fetchAllCategories());
-  }, [dispatchProduct, dispatchCategories]);
-
-  const filteredProducts = selectedCategory
-    ? getAllProducts.filter((product) => product.category === selectedCategory)
-    : getAllProducts;
+  const {
+    selectedCategory,
+    setSelectedCategory,
+    getAllCategories,
+    filteredProducts,
+  } = useAllProductHome();
 
   return (
     <>

@@ -1,6 +1,7 @@
 import React from "react";
+import { titleProp } from "../../../types/types";
 
-export default function CategoriesCheckBox({ title }) {
+const CategoriesCheckBox: React.FC<titleProp> = ({ title }) => {
   return (
     <>
       <div className="flex items-center my-3">
@@ -17,4 +18,6 @@ export default function CategoriesCheckBox({ title }) {
       </div>
     </>
   );
-}
+};
+
+export default CategoriesCheckBox;

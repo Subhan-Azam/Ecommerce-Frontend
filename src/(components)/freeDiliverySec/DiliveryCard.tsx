@@ -1,12 +1,7 @@
 import React from "react";
-interface FreeDiliveryPropsTypes {
-  src: String;
-  title: String;
-  text: String;
-}
+import { FreeDeliveryPropsTypes } from "../../types/types";
 
-
-const DiliveryCard: React.FC<FreeDiliveryPropsTypes> = ({
+const DiliveryCard: React.FC<FreeDeliveryPropsTypes> = ({
   src,
   title,
   text,

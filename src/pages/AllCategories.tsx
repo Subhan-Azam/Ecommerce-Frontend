@@ -1,24 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CategoriesCheckBox from "../(components)/categories/categoriesCheckBox/CategoriesCheckBox.tsx";
 import CategoriesHeading from "../(components)/categories/categoriesHeading/CategoriesHeading.tsx";
 import ProductCard from "../(components)/productCard/ProductCard.tsx";
 import SalesSec from "../(components)/salesSec/SalesSec.tsx";
 import Loader from "../(components)/loader/Loader.tsx";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchProducts } from "../store/slices/allProductsSlice.ts";
-import { AppDispatch, RootState } from "../store/store.ts";
+import useAllCategories from "../hooks/useAllCategories.ts";
 
 export default function AllCategories() {
-  const getAllProducts = useSelector(
-    (store: RootState) => store.storeProducts.products
-  );
-
-  const dispatchProduct = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatchProduct(fetchProducts());
-  }, [dispatchProduct]);
+  const { getAllProducts } = useAllCategories();
 
   return (
     <>
@@ -84,7 +74,6 @@ export default function AllCategories() {
           <hr className="w-full lg:max-w-[314px]" />
         </div>
 
-        {/* Section 2 */}
         {!getAllProducts.length ? (
           <div className="mx-auto flex justify-center col-span-4 lg:col-span-3">
             <Loader />

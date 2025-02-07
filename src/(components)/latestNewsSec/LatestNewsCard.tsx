@@ -1,10 +1,7 @@
 import React from "react";
+import { PropsTypes } from "../../types/types";
 
-interface LatestNewsCardPropsTypes {
-  src: String;
-}
-
-const LatestNewsCard: React.FC<LatestNewsCardPropsTypes> = ({ src }) => {
+const LatestNewsCard: React.FC<PropsTypes> = ({ src }) => {
   return (
     <>
       <div className="md:flex justify-center items-center">

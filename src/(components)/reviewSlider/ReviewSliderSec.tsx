@@ -1,23 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReviewCard from "./ReviewCard.tsx";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Autoplay } from "swiper/modules";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchReviews } from "../../store/slices/allReviewsSlice.ts";
-import { AppDispatch, RootState } from "../../store/store.ts";
 import { Link } from "react-router-dom";
 import Loader from "../loader/Loader.tsx";
+import useReviewSliderSec from "../../hooks/useReviewSliderSec.ts";
 
 export default function ReviewSliderSec() {
-  const getAllReviews = useSelector(
-    (store: RootState) => store.storeReviews.reviews
-  );
-  const dispatchReviews = useDispatch<AppDispatch>();
-  useEffect(() => {
-    dispatchReviews(fetchReviews());
-  }, [dispatchReviews]);
+  const { getAllReviews } = useReviewSliderSec();
 
   return (
     <>

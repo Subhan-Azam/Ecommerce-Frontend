@@ -36,10 +36,6 @@ function App() {
       ),
     },
     
-    // {
-    //   path: "/single-product/:id",
-    //   element: <SingleProduct />,
-    // },
     {
       path: "/addtocart",
       element: (
@@ -52,7 +48,6 @@ function App() {
 
   return (
     <div className="font-poppins">
-      {/* Navbar Section */}
       <RouterProvider router={router}>
         <Navbar />
       </RouterProvider>

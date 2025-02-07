@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import SearchBtn from "../buttons/SearchBtn.tsx";
+import { images as imageAssets } from "../../constants/images.ts";
 
 export default function HeroSection() {
-  const HeroImg1 = require("../../assets/hero img.png");
-  const HeroImg2 = require("../../assets/dslr 3.png");
-  const HeroImg3 = require("../../assets/dslr 2.png");
+  const [activeButton, setActiveButton] = useState<number>(1);
+  const [activeImage, setActiveImage] = useState<string | undefined>(
+    imageAssets.HeroImg1 as string
+  );
 
-  const [activeButton, setActiveButton] = useState(1);
-  const [activeImage, setActiveImage] = useState(HeroImg1);
-
-  const images = {
-    1: HeroImg1,
-    2: HeroImg2,
-    3: HeroImg3,
+  const images: Record<number, string> = {
+    1: imageAssets.HeroImg1,
+    2: imageAssets.HeroImg2,
+    3: imageAssets.HeroImg3,
   };
 
   const handleButtonClick = (buttonNumber) => {

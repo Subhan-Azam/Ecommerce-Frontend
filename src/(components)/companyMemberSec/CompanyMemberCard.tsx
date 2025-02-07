@@ -1,9 +1,7 @@
 import React from "react";
-interface companyMemberCardPropsTypes {
-  src: String;
-}
+import { PropsTypes } from "../../types/types";
 
-const companyMemberCard: React.FC<companyMemberCardPropsTypes> = ({ src }) => {
+const companyMemberCard: React.FC<PropsTypes> = ({ src }) => {
   return (
     <div className="flex justify-center cursor-pointer">
       <div className="group border border-[#B6B6B6] rounded-[20px] bg-card p-4 my-5 max-w-[432px] w-full">

@@ -2,13 +2,10 @@ import React from "react";
 import LatestNewsCard from "./LatestNewsCard.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Pagination } from "swiper/modules";
-import { Navigation } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
+import { images } from "../../constants/images.ts";
 
 export default function LatestNewsSec() {
-  const LatestNewsImg = require("../../assets/ear bird.png");
-  const LatestNewsImg2 = require("../../assets/latesNewSec.png");
   return (
     <>
       <section className="container mx-auto text-gray-600 body-font my-20">
@@ -37,9 +34,9 @@ export default function LatestNewsSec() {
               }}
             >
               {[
-                `${LatestNewsImg}`,
-                `${LatestNewsImg2}`,
-                `${LatestNewsImg}`,
+                `${images.LatestNewsImg}`,
+                `${images.LatestNewsImg2}`,
+                `${images.LatestNewsImg}`,
               ].map((newsCard, index) => (
                 <SwiperSlide key={index}>
                   <LatestNewsCard src={newsCard} />

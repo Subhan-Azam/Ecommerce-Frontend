@@ -4,16 +4,18 @@ import { AiOutlineUser } from "react-icons/ai";
 import { GoHeart } from "react-icons/go";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { images } from "../../constants/images.ts";
+
 
 export default function NavbarSec2() {
-  const NavLogo = require("../../assets/logo 1.png");
+
 
   return (
     <div className="flex flex-wrap items-center justify-between bg-[#003F62] px-4 md:px-10 min-h-[90px]">
       <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
         <Link to={"/"}>
           <img
-            src={NavLogo}
+            src={images.NavLogo}
             className="w-[140px] h-[39px] mr-5"
             alt="Logo"
           />

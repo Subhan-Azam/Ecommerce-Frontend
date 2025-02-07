@@ -1,10 +1,7 @@
 import React from "react";
-interface ReviewCardPropsTypes {
-  src: String;
-  title: String;
-}
+import { FreeDeliveryPropsTypes } from "../../types/types";
 
-const ReviewCard: React.FC<ReviewCardPropsTypes> = ({ src, title }) => {
+const ReviewCard: React.FC<FreeDeliveryPropsTypes> = ({ src, title }) => {
   return (
     <>
       <div className="group flex justify-around items-center border border-[#B6B6B6] w-full min-h-[147px] rounded-[20px]">

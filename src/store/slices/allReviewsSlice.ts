@@ -1,67 +1,12 @@
-// import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// import axios from "axios";
-
-// export const fetchReviews = createAsyncThunk(
-//   "review/fetchReviews",
-//   async () => {
-//     const response = await axios.get(
-//       "https://fakestoreapi.com/products?limit=5"
-//     );
-//     // console.log("fetch fetchReviews from api", response.data);
-//     return response.data;
-//   }
-// );
-
-// export const allReviewsSlice = createSlice({
-//   name: "review",
-//   initialState: {
-//     reviews: [],
-//   },
-//   reducers: {
-//     setReviews: (state, action) => {
-//       state.reviews = action.payload;
-//     },
-//   },
-
-//   extraReducers: (builder) => {
-//     builder.addCase(fetchReviews.fulfilled, (state, action) => {
-//     // console.log("fetch categories in extra reducer", action.payload);
-
-//       state.reviews = action.payload;
-//     });
-//   },
-// });
-
-// export const {setReviews} = allReviewsSlice.actions;
-
-
-
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
-
-interface Review {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
-
-interface ReviewState {
-  reviews: Review[];
-}
+// import axios from "axios";
+import { Review, ReviewState } from "../../types/types";
+import { axiosInstance } from "../../utils/utils.ts";
 
 export const fetchReviews = createAsyncThunk<Review[]>(
   "review/fetchReviews",
   async () => {
-    const response = await axios.get(
-      "https://fakestoreapi.com/products?limit=5"
-    );
+    const response = await axiosInstance.get("?limit=5");
     return response.data;
   }
 );
@@ -70,6 +15,8 @@ export const allReviewsSlice = createSlice({
   name: "review",
   initialState: {
     reviews: [],
+    loading: false,
+    error: null,
   } as ReviewState,
 
   reducers: {
@@ -79,9 +26,18 @@ export const allReviewsSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(fetchReviews.fulfilled, (state, action) => {
-      state.reviews = action.payload;
-    });
+    builder
+      .addCase(fetchReviews.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchReviews.fulfilled, (state, action) => {
+        state.reviews = action.payload;
+      })
+      .addCase(fetchReviews.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      });
   },
 });
 

@@ -1,8 +1,5 @@
 import React from "react";
-interface SearchBtnPropsTypes {
-  style: String;
-  content: String;
-}
+import { SearchBtnPropsTypes } from "../../types/types";
 
 const SearchBtn: React.FC<SearchBtnPropsTypes> = ({ style, content }) => {
   return (

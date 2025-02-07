@@ -1,14 +1,14 @@
 import React from "react";
 import SearchBtn from "../buttons/SearchBtn.tsx";
+import { images } from "../../constants/images.ts";
 
 export default function SalesSec() {
-  const bgImg = require("../../assets/bgImg.png");
   return (
     <>
       <div
         className="relative container mx-auto w-full h-[417px] rounded-none md:rounded-[20px] flex flex-col justify-center items-center pr-0 lg:items-end lg:pr-[130px] mt-10 my-0 md:my-16"
         style={{
-          backgroundImage: `url(${bgImg})`,
+          backgroundImage: `url(${images.bgImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
