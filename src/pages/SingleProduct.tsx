@@ -1,9 +1,9 @@
 import React from "react";
 import { CiStar } from "react-icons/ci";
-import SearchBtn from "../(components)/buttons/SearchBtn.tsx";
+import SearchBtn from "../components/buttons/SearchBtn.tsx";
 import { SlSocialGoogle } from "react-icons/sl";
 import { PiWhatsappLogoLight, PiFacebookLogo } from "react-icons/pi";
-import Loader from "../(components)/loader/Loader.tsx";
+import Loader from "../components/loader/Loader.tsx";
 import useCounter from "../hooks/useCounter.ts";
 import useSingleProduct from "../hooks/useSingleProduct.ts";
 

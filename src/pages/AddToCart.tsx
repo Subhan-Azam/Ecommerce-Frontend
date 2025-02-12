@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SearchBtn from "../(components)/buttons/SearchBtn.tsx";
+import SearchBtn from "../components/buttons/SearchBtn.tsx";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 export default function AddToCart() {
@@ -38,14 +38,23 @@ export default function AddToCart() {
                       <img src={item.src} alt={item.title} width="50" />
                       <p>{item.title}</p>
                     </div>
-                    <p className="flex justify-center items-center">${item.price}</p>
-                    <p className="flex justify-center items-center">{item.category}</p>
-                    <button 
+                    <p className="flex justify-center items-center">
+                      ${item.price}
+                    </p>
+                    <p className="flex justify-center items-center">
+                      {item.category}
+                    </p>
+                    <button
                       className="text-red-500 font-bold"
                       onClick={() => {
-                        const updatedCart = cartItems.filter((_, i) => i !== index);
+                        const updatedCart = cartItems.filter(
+                          (_, i) => i !== index
+                        );
                         setCartItems(updatedCart);
-                        localStorage.setItem("cart", JSON.stringify(updatedCart));
+                        localStorage.setItem(
+                          "cart",
+                          JSON.stringify(updatedCart)
+                        );
                       }}
                     >
                       ❌ Remove
@@ -66,24 +75,38 @@ export default function AddToCart() {
               <div className="flex justify-between items-center">
                 <h3 className="font-[500] text-[19px]">Subtotal</h3>
                 <h3 className="font-[500] text-[22px]">
-                  ${cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)}
+                  $
+                  {cartItems
+                    .reduce((total, item) => total + item.price, 0)
+                    .toFixed(2)}
                 </h3>
               </div>
               <hr />
               <div className="border rounded-[20px] h-[52px] flex items-center justify-between px-6">
-                <input type="text" className="outline-none -ml-3" placeholder="Enter promo code" />
+                <input
+                  type="text"
+                  className="outline-none -ml-3"
+                  placeholder="Enter promo code"
+                />
                 <p className="text-[#003F62]">Apply</p>
               </div>
               <hr />
               <div className="border rounded-[20px] h-[52px] flex items-center justify-between px-6">
-                <input type="text" className="outline-none -ml-3" placeholder="Shipping Details" />
+                <input
+                  type="text"
+                  className="outline-none -ml-3"
+                  placeholder="Shipping Details"
+                />
                 <RiArrowDropDownLine size={30} />
               </div>
 
               <div className="flex justify-between items-center">
                 <h3 className="text-[18px]">Total amount</h3>
                 <h3 className="text-[18px]">
-                  ${cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)}
+                  $
+                  {cartItems
+                    .reduce((total, item) => total + item.price, 0)
+                    .toFixed(2)}
                 </h3>
               </div>
               <SearchBtn

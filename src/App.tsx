@@ -1,56 +1,37 @@
 import React from "react";
-import Navbar from "./(components)/navbar/Navbar.tsx";
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar.tsx";
+import Footer from "./components/footer/Footer.tsx";
 import Home from "./pages/Home.tsx";
 import AllCategories from "./pages/AllCategories.tsx";
-import Footer from "./(components)/footer/Footer.tsx";
 import SingleProduct from "./pages/SingleProduct.tsx";
 import AddToCart from "./pages/AddToCart.tsx";
 
-function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          <Navbar /> <Home /> <Footer />
-        </>
-      ),
-    },
-    {
-      path: "/allCategories",
-      element: (
-        <>
-          <Navbar /> <AllCategories />
-          <Footer />
-        </>
-      ),
-    },
-    {
-      path: "/single-product/:id",
-      element: (
-        <>
-          <Navbar /> <SingleProduct/> <Footer/>
-        </>
-      ),
-    },
-    
-    {
-      path: "/addtocart",
-      element: (
-        <>
-          <Navbar /> <AddToCart /> <Footer />
-        </>
-      ),
-    },
-  ]);
+const Layout = () => (
+  <div>
+    <Navbar />
+    <Outlet />
+    <Footer />
+  </div>
+);
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/allCategories", element: <AllCategories /> },
+      { path: "/single-product/:id", element: <SingleProduct /> },
+      { path: "/addtocart", element: <AddToCart /> },
+    ],
+  },
+]);
+
+function App() {
   return (
     <div className="font-poppins">
-      <RouterProvider router={router}>
-        <Navbar />
-      </RouterProvider>
+      <RouterProvider router={router} />
     </div>
   );
 }

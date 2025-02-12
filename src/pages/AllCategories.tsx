@@ -1,9 +1,9 @@
 import React from "react";
-import CategoriesCheckBox from "../(components)/categories/categoriesCheckBox/CategoriesCheckBox.tsx";
-import CategoriesHeading from "../(components)/categories/categoriesHeading/CategoriesHeading.tsx";
-import ProductCard from "../(components)/productCard/ProductCard.tsx";
-import SalesSec from "../(components)/salesSec/SalesSec.tsx";
-import Loader from "../(components)/loader/Loader.tsx";
+import CategoriesCheckBox from "../components/categories/categoriesCheckBox/CategoriesCheckBox.tsx";
+import CategoriesHeading from "../components/categories/categoriesHeading/CategoriesHeading.tsx";
+import ProductCard from "../components/productCard/ProductCard.tsx";
+import SalesSec from "../components/salesSec/SalesSec.tsx";
+import Loader from "../components/loader/Loader.tsx";
 import { Link } from "react-router-dom";
 import useAllCategories from "../hooks/useAllCategories.ts";
 

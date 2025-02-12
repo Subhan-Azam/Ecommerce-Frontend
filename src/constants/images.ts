@@ -37,5 +37,5 @@ export const images = {
   // product Card
   StarsImg: require("../assets/stars.png"),
   // salesSec
-  bgImg: require("../assets/bgImg.png"),
+  bgImg: require("../assets/bg-img.png"),
 };

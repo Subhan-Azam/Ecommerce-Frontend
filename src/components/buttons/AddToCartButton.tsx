@@ -17,9 +17,6 @@ const AddToCartButton = ({ product }: { product: any }) => {
       if (!isProductInCart) {
         existingCart.push(product);
         localStorage.setItem("cart", JSON.stringify(existingCart));
-        console.log(`✅ ${product.title} added to cart!`);
-      } else {
-        console.log(`⚠️ ${product.title} is already in cart.`);
       }
 
       setLoading(false);

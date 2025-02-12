@@ -27,10 +27,6 @@ const ProductCard: React.FC<ProductCardPropsTypes> = ({
       if (!isProductInCart) {
         existingCart.push(newProduct);
         localStorage.setItem("cart", JSON.stringify(existingCart));
-
-        alert("Cart Updated Successfully!");
-      } else {
-        alert("This product is already in the cart.");
       }
 
       setLoading(false);
